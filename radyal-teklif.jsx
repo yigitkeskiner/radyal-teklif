@@ -95,7 +95,6 @@ export default function RadyalTeklif() {
   const [modelKey, setModelKey] = useState("KN");
   const [height, setHeight] = useState("");
   const [uzunluk, setUzunluk] = useState(""); // cm
-  const [iskonto, setIskonto] = useState(0);
   const [adet, setAdet] = useState(1);
   const [mahal, setMahal] = useState("");
   const [renk, setRenk] = useState(RENKLER[0]);
@@ -121,7 +120,7 @@ export default function RadyalTeklif() {
     : birimFiyat;
   const renkFark = renk ? renk.fark : 0;
   // Maliyet: liste * (1-44%) * (1+renk%) * (1-ekstraIsk%)
-  const maliyetBirim = birimFiyat ? birimFiyat * (1 - LISTE_ISKONTO) * (1 + renkFark/100) * (1 - iskonto/100) : null;
+  const maliyetBirim = birimFiyat ? birimFiyat * (1 - LISTE_ISKONTO) * (1 + renkFark/100) : null;
   const birimFiyatRenkli = maliyetBirim; // maliyet = alış fiyatı
   const satışBirim = maliyetBirim ? maliyetBirim / karBoleni : null;
   const toplamFiyat = satışBirim && (hamFiyat !== null) ? satışBirim * (!isHavlupan ? (dilimSayisi||0) : 1) * adet : null;
@@ -148,12 +147,11 @@ export default function RadyalTeklif() {
       renkAd: renk.ad,
       renkFark: renk.fark,
       karYuzde: karYuzde,
-      iskonto,
       adet,
       toplam: toplamFiyat,
     };
     setSatirlar(p => [...p, satir]);
-    setMahal(""); setUzunluk(""); setAdet(1); setIskonto(0);
+    setMahal(""); setUzunluk(""); setAdet(1);
   };
 
   const sil = (id) => setSatirlar(p => p.filter(s => s.id !== id));
@@ -164,8 +162,8 @@ export default function RadyalTeklif() {
 
   const yazdir = () => {
     const tarih = new Date().toLocaleDateString("tr-TR");
-    const satirHTML = satirlar.map((s,i) => `<tr style="background:${i%2===0?"#fff":"#f9f9f9"}"><td>${s.mahal||"-"}</td><td><b>${s.kod}</b> – ${ALL_MODELS[s.kod]?.ad||""}</td><td>${s.renkAd}${s.renkFark>0?` <span style="color:#e8640a;font-size:9px">(+%${s.renkFark})</span>`:""}</td><td>${s.yukseklik} mm</td><td>${s.uzunluk}</td><td>${s.dilim}</td><td>${s.watt} W</td><td style="text-align:right">₺${fmt(s.birim)}</td><td style="text-align:center">${s.iskonto>0?`%${s.iskonto}`:"-"}</td><td style="text-align:center">${s.adet}</td><td style="text-align:right;font-weight:700">₺${fmt(s.toplam)}</td></tr>`).join("");
-    const html = `<!DOCTYPE html><html><head><meta charset="utf-8"><title>Radyal Teklif</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;color:#222;padding:24px 32px}.header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:24px;padding-bottom:16px;border-bottom:2px solid #e8640a}.logo{font-size:22px;font-weight:800;color:#e8640a;letter-spacing:-1px}.logo-sub{font-size:10px;color:#888;margin-top:2px}.meta{text-align:right;font-size:11px;color:#555;line-height:1.8}.info-bar{display:flex;gap:32px;background:#f5f5f5;border-radius:6px;padding:10px 16px;margin-bottom:18px}.info-bar label{color:#888;font-size:10px;text-transform:uppercase;display:block}.info-bar b{font-size:13px;color:#222}table{width:100%;border-collapse:collapse;margin-bottom:16px}th{background:#1a1d27;color:#fff;padding:8px 10px;font-size:10px;text-align:left;letter-spacing:.5px;text-transform:uppercase}td{padding:7px 10px;border-bottom:1px solid #eee;vertical-align:middle}.tr-tot{background:#1a1d27;color:#fff}.tr-tot td{padding:12px 10px;font-weight:700;font-size:13px;border:none}.notes{font-size:10px;color:#888;line-height:1.9;margin-top:12px;padding-top:12px;border-top:1px solid #eee}.stamp{margin-top:40px;display:flex;justify-content:space-between}.stamp-box{border-top:1px solid #ccc;width:180px;padding-top:8px;text-align:center;font-size:10px;color:#888}@media print{body{padding:0}}</style></head><body><div class="header"><div><div class="logo">radyal</div><div class="logo-sub">RADYAL ISITMA SİSTEMLERİ A.Ş &nbsp;|&nbsp; Tel: 850-308 08 08 &nbsp;|&nbsp; info@radyal.com</div></div><div class="meta"><div><b>TARİH:</b> ${tarih}</div><div><b>FİYAT LİSTESİ:</b> 01.05.2026</div><div style="margin-top:4px;font-size:14px;font-weight:700;color:#e8640a">TEKLİF</div></div></div><div class="info-bar">${musterı?`<div><label>Müşteri</label><b>${musterı}</b></div>`:""} ${projeAdi?`<div><label>Proje</label><b>${projeAdi}</b></div>`:""}<div><label>Kalem Sayısı</label><b>${satirlar.length}</b></div><div><label>Satış Toplamı (KDV Hariç)</label><b>₺${fmt(genelToplam)}</b></div></div><table><thead><tr><th>Mahal</th><th>Model</th><th>Renk</th><th>Yükseklik</th><th>Uzunluk</th><th>Dilim</th><th>Verim</th><th style="text-align:right">Birim ₺</th><th style="text-align:center">İsk.</th><th style="text-align:center">Adet</th><th style="text-align:right">Toplam ₺</th></tr></thead><tbody>${satirHTML}</tbody><tfoot><tr class="tr-tot"><td colspan="10">GENEL TOPLAM (KDV HARİÇ)</td><td style="text-align:right">₺${fmt(genelToplam)}</td></tr></tfoot></table><div class="notes"><b>Genel Satış Şartları:</b> Fiyatlar fabrika teslim, KDV hariçtir. Isıl güç ∆T60 (90/70–20°C). Standart renkler: RAL 9010/9016 Beyaz, RAL 9005 Siyah. Özel renk %10–40 fark. Ödeme gecikmesinde %3 vade farkı. Fiyat değişikliği hakkı saklıdır.</div><div class="stamp"><div class="stamp-box">Hazırlayan İmza / Kaşe</div><div class="stamp-box">Müşteri İmza / Kaşe</div></div><script>window.onload=()=>{window.print()}<\/script></body></html>`;
+    const satirHTML = satirlar.map((s,i) => `<tr style="background:${i%2===0?"#fff":"#f9f9f9"}"><td>${s.mahal||"-"}</td><td><b>${s.kod}</b> – ${ALL_MODELS[s.kod]?.ad||""}</td><td>${s.renkAd}${s.renkFark>0?` <span style="color:#e8640a;font-size:9px">(+%${s.renkFark})</span>`:""}</td><td>${s.yukseklik} mm</td><td>${s.uzunluk}</td><td>${s.dilim}</td><td>${s.watt} W</td><td style="text-align:right">₺${fmt(s.birim)}</td><td style="text-align:center">${s.adet}</td><td style="text-align:right;font-weight:700">₺${fmt(s.toplam)}</td></tr>`).join("");
+    const html = `<!DOCTYPE html><html><head><meta charset="utf-8"><title>Radyal Teklif</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;color:#222;padding:24px 32px}.header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:24px;padding-bottom:16px;border-bottom:2px solid #e8640a}.logo{font-size:22px;font-weight:800;color:#e8640a;letter-spacing:-1px}.logo-sub{font-size:10px;color:#888;margin-top:2px}.meta{text-align:right;font-size:11px;color:#555;line-height:1.8}.info-bar{display:flex;gap:32px;background:#f5f5f5;border-radius:6px;padding:10px 16px;margin-bottom:18px}.info-bar label{color:#888;font-size:10px;text-transform:uppercase;display:block}.info-bar b{font-size:13px;color:#222}table{width:100%;border-collapse:collapse;margin-bottom:16px}th{background:#1a1d27;color:#fff;padding:8px 10px;font-size:10px;text-align:left;letter-spacing:.5px;text-transform:uppercase}td{padding:7px 10px;border-bottom:1px solid #eee;vertical-align:middle}.tr-tot{background:#1a1d27;color:#fff}.tr-tot td{padding:12px 10px;font-weight:700;font-size:13px;border:none}.notes{font-size:10px;color:#888;line-height:1.9;margin-top:12px;padding-top:12px;border-top:1px solid #eee}.stamp{margin-top:40px;display:flex;justify-content:space-between}.stamp-box{border-top:1px solid #ccc;width:180px;padding-top:8px;text-align:center;font-size:10px;color:#888}@media print{body{padding:0}}</style></head><body><div class="header"><div><div class="logo">radyal</div><div class="logo-sub">RADYAL ISITMA SİSTEMLERİ A.Ş &nbsp;|&nbsp; Tel: 850-308 08 08 &nbsp;|&nbsp; info@radyal.com</div></div><div class="meta"><div><b>TARİH:</b> ${tarih}</div><div><b>FİYAT LİSTESİ:</b> 01.05.2026</div><div style="margin-top:4px;font-size:14px;font-weight:700;color:#e8640a">TEKLİF</div></div></div><div class="info-bar">${musterı?`<div><label>Müşteri</label><b>${musterı}</b></div>`:""} ${projeAdi?`<div><label>Proje</label><b>${projeAdi}</b></div>`:""}<div><label>Kalem Sayısı</label><b>${satirlar.length}</b></div><div><label>Satış Toplamı (KDV Hariç)</label><b>₺${fmt(genelToplam)}</b></div></div><table><thead><tr><th>Mahal</th><th>Model</th><th>Renk</th><th>Yükseklik</th><th>Uzunluk</th><th>Dilim</th><th>Verim</th><th style="text-align:right">Birim ₺</th><th style="text-align:center">Adet</th><th style="text-align:right">Toplam ₺</th></tr></thead><tbody>${satirHTML}</tbody><tfoot><tr class="tr-tot"><td colspan="9">GENEL TOPLAM (KDV HARİÇ)</td><td style="text-align:right">₺${fmt(genelToplam)}</td></tr></tfoot></table><div class="notes"><b>Genel Satış Şartları:</b> Fiyatlar fabrika teslim, KDV hariçtir. Isıl güç ∆T60 (90/70–20°C). Standart renkler: RAL 9010/9016 Beyaz, RAL 9005 Siyah. Özel renk %10–40 fark. Ödeme gecikmesinde %3 vade farkı. Fiyat değişikliği hakkı saklıdır.</div><div class="stamp"><div class="stamp-box">Hazırlayan İmza / Kaşe</div><div class="stamp-box">Müşteri İmza / Kaşe</div></div><script>window.onload=()=>{window.print()}<\/script></body></html>`;
     const w = window.open("","_blank");
     w.document.write(html);
     w.document.close();
@@ -324,20 +322,12 @@ export default function RadyalTeklif() {
               )}
             </div>
 
-            {/* İskonto & Adet */}
-            <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:12}}>
-              <div>
-                <Label>İskonto (%)</Label>
-                <input type="number" min="0" max="60" value={iskonto}
-                  onChange={e=>setIskonto(Number(e.target.value))}
-                  style={{...inputSt, width:"100%", boxSizing:"border-box"}} />
-              </div>
-              <div>
-                <Label>Adet</Label>
-                <input type="number" min="1" value={adet}
-                  onChange={e=>setAdet(Number(e.target.value))}
-                  style={{...inputSt, width:"100%", boxSizing:"border-box"}} />
-              </div>
+            {/* Adet */}
+            <div>
+              <Label>Adet</Label>
+              <input type="number" min="1" value={adet}
+                onChange={e=>setAdet(Number(e.target.value))}
+                style={{...inputSt, width:"100%", boxSizing:"border-box"}} />
             </div>
 
 
@@ -387,7 +377,6 @@ export default function RadyalTeklif() {
                   )}
                   <Row label="Liste birim" val={`₺${fmt(birimFiyat)}${!isHavlupan?" /dilim":" /adet"}`} accent="#555" />
                   <Row label="-%44 sonrası birim" val={`₺${fmt(birimFiyat*(1-LISTE_ISKONTO))}${renkFark>0?` (+%${renkFark} renk)`:""}`} accent="#aaa" />
-                  {iskonto > 0 && <Row label={`Ek iskonto (%${iskonto})`} val={`-%${iskonto}`} accent="#e05a5a" />}
                   <div style={{borderTop:"1px solid #2d4020",paddingTop:6,marginTop:2}}>
                     <Row label={`Maliyet (${!isHavlupan?dilimSayisi+" dilim × ":""}${adet} adet)`}
                       val={`₺${maliyetBirim && (isHavlupan||dilimSayisi) ? fmt(maliyetBirim*(!isHavlupan?dilimSayisi:1)*adet) : "-"}`}
@@ -451,7 +440,7 @@ export default function RadyalTeklif() {
                 {/* Tablo Header */}
                 <div style={{
                   display:"grid",
-                  gridTemplateColumns:"100px 70px 100px 80px 50px 50px 80px 55px 55px 90px 36px",
+                  gridTemplateColumns:"100px 70px 100px 80px 50px 50px 80px 90px 36px",
                   padding:"10px 16px",
                   background:"#12141e",
                   borderBottom:"1px solid #2a2d3e",
@@ -465,7 +454,6 @@ export default function RadyalTeklif() {
                   <span>Dilim</span>
                   <span>Watt</span>
                   <span>Birim ₺</span>
-                  <span>İsk.</span>
                   <span>Adet</span>
                   <span style={{textAlign:"right"}}>Toplam ₺</span>
                   <span></span>
@@ -474,7 +462,7 @@ export default function RadyalTeklif() {
                 {satirlar.map((s,i) => (
                   <div key={s.id} style={{
                     display:"grid",
-                    gridTemplateColumns:"100px 70px 100px 80px 50px 50px 80px 55px 55px 90px 36px",
+                    gridTemplateColumns:"100px 70px 100px 80px 50px 50px 80px 90px 36px",
                     padding:"11px 16px",
                     borderBottom: i < satirlar.length-1 ? "1px solid #1e2135" : "none",
                     fontSize:13, alignItems:"center", gap:8,
@@ -488,9 +476,6 @@ export default function RadyalTeklif() {
                     <span style={{color:"#aaa"}}>{s.dilim}</span>
                     <span style={{color:"#aaa"}}>{s.watt}W</span>
                     <span>₺{fmt(s.birim)}</span>
-                    <span style={{color:s.iskonto>0?"#e8640a":"#555"}}>
-                      {s.iskonto>0?`%${s.iskonto}`:"-"}
-                    </span>
                     <span style={{color:"#aaa"}}>{s.adet}</span>
                     <span style={{textAlign:"right",fontWeight:600,color:"#8dd45c"}}>₺{fmt(s.toplam)}</span>
                     <button onClick={()=>sil(s.id)} style={{
