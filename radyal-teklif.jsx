@@ -112,6 +112,8 @@ export default function RadyalTeklif() {
   const dilimSayisi = !isHavlupan && seciliVaryant && uzunluk
     ? Math.ceil(parseFloat(uzunluk) / model.dw)
     : null;
+  // Yuvarlama sonrası gerçek (üretilecek) radyatör uzunluğu
+  const gercekUzunluk = (!isHavlupan && dilimSayisi && model) ? dilimSayisi * model.dw : null;
 
   // Toplam fiyat (birim)
   const birimFiyat = seciliVaryant ? seciliVaryant.p : null;
@@ -136,7 +138,7 @@ export default function RadyalTeklif() {
       kod: modelKey,
       ad: model.ad,
       yukseklik: seciliVaryant.h,
-      uzunluk: isHavlupan ? "-" : `${uzunluk} mm`,
+      uzunluk: isHavlupan ? "-" : `${gercekUzunluk} mm`,
       dilim: isHavlupan ? "-" : dilimSayisi,
       watt: seciliVaryant.w,
       listeBirim: birimFiyat,
