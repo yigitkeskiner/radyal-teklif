@@ -83,6 +83,8 @@ const RENKLER = [
   { kod:"An 05",    ad:"Açık Bronz Eloksal",    fark:25, grup:"Eloksal"  },
   { kod:"Wd 01",    ad:"Açık Meşe (Ahşap)",     fark:35, grup:"Ahşap"    },
   { kod:"Wd 02",    ad:"Rustik Meşe (Ahşap)",   fark:35, grup:"Ahşap"    },
+  { kod:"RF 01",    ad:"Resimli Film Baskı",    fark:35, grup:"Deri/Film"},
+  { kod:"PS 01",    ad:"Ayna Yüzlü Paslanmaz (Havlupan)", fark:40, grup:"Paslanmaz" },
 ];
 
 
@@ -109,7 +111,7 @@ export default function RadyalTeklif() {
 
   // Radyatör: dilim hesabı
   const dilimSayisi = !isHavlupan && seciliVaryant && uzunluk
-    ? Math.round((parseFloat(uzunluk) * 10) / model.dw)
+    ? Math.ceil((parseFloat(uzunluk) * 10) / model.dw)
     : null;
 
   // Toplam fiyat (birim)
@@ -281,11 +283,21 @@ export default function RadyalTeklif() {
                   <span style={{position:"absolute",right:12,top:"50%",transform:"translateY(-50%)",
                     color:"#555",fontSize:12}}>cm</span>
                 </div>
-                {dilimSayisi !== null && (
-                  <div style={{marginTop:6, fontSize:13, color:"#e8640a", fontWeight:600}}>
-                    → {dilimSayisi} dilim ({uzunluk} cm ÷ {model.dw/10} cm = {dilimSayisi})
-                  </div>
-                )}
+                {dilimSayisi !== null && (() => {
+                  const oranTam = (parseFloat(uzunluk) * 10) / model.dw;
+                  const gercekUzunlukCm = (dilimSayisi * model.dw) / 10;
+                  const tamSayi = Math.abs(oranTam - dilimSayisi) < 0.001;
+                  return (
+                    <div style={{marginTop:6, fontSize:13, color:"#e8640a", fontWeight:600}}>
+                      → {dilimSayisi} dilim ({uzunluk} cm ÷ {model.dw/10} cm = {oranTam.toFixed(2)}{!tamSayi ? ` → üste yuvarlandı` : ""})
+                      {!tamSayi && (
+                        <span style={{display:"block", marginTop:2, fontSize:11, color:"#888", fontWeight:400}}>
+                          Gerçek radyatör uzunluğu: {gercekUzunlukCm} cm
+                        </span>
+                      )}
+                    </div>
+                  );
+                })()}
               </div>
             )}
 
