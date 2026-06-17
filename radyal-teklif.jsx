@@ -94,7 +94,7 @@ const fmt = (n) => n.toLocaleString("tr-TR", { minimumFractionDigits: 2, maximum
 export default function RadyalTeklif() {
   const [modelKey, setModelKey] = useState("KN");
   const [height, setHeight] = useState("");
-  const [uzunluk, setUzunluk] = useState(""); // cm
+  const [uzunluk, setUzunluk] = useState(""); // mm
   const [adet, setAdet] = useState(1);
   const [mahal, setMahal] = useState("");
   const [renk, setRenk] = useState(RENKLER[0]);
@@ -110,7 +110,7 @@ export default function RadyalTeklif() {
 
   // Radyatör: dilim hesabı
   const dilimSayisi = !isHavlupan && seciliVaryant && uzunluk
-    ? Math.ceil((parseFloat(uzunluk) * 10) / model.dw)
+    ? Math.ceil(parseFloat(uzunluk) / model.dw)
     : null;
 
   // Toplam fiyat (birim)
@@ -136,7 +136,7 @@ export default function RadyalTeklif() {
       kod: modelKey,
       ad: model.ad,
       yukseklik: seciliVaryant.h,
-      uzunluk: isHavlupan ? "-" : `${uzunluk} cm`,
+      uzunluk: isHavlupan ? "-" : `${uzunluk} mm`,
       dilim: isHavlupan ? "-" : dilimSayisi,
       watt: seciliVaryant.w,
       listeBirim: birimFiyat,
@@ -275,25 +275,25 @@ export default function RadyalTeklif() {
             {/* Uzunluk (sadece radyatör) */}
             {!isHavlupan && (
               <div>
-                <Label>Radyatör Uzunluğu (cm)</Label>
+                <Label>Radyatör Uzunluğu (mm)</Label>
                 <div style={{position:"relative"}}>
                   <input type="number" min="1" value={uzunluk}
                     onChange={e=>setUzunluk(e.target.value)}
-                    placeholder="ör. 120"
+                    placeholder="ör. 1200"
                     style={{...inputSt, width:"100%", boxSizing:"border-box", paddingRight:40}} />
                   <span style={{position:"absolute",right:12,top:"50%",transform:"translateY(-50%)",
-                    color:"#555",fontSize:12}}>cm</span>
+                    color:"#555",fontSize:12}}>mm</span>
                 </div>
                 {dilimSayisi !== null && (() => {
-                  const oranTam = (parseFloat(uzunluk) * 10) / model.dw;
-                  const gercekUzunlukCm = (dilimSayisi * model.dw) / 10;
+                  const oranTam = parseFloat(uzunluk) / model.dw;
+                  const gercekUzunlukMm = dilimSayisi * model.dw;
                   const tamSayi = Math.abs(oranTam - dilimSayisi) < 0.001;
                   return (
                     <div style={{marginTop:6, fontSize:13, color:"#e8640a", fontWeight:600}}>
-                      → {dilimSayisi} dilim ({uzunluk} cm ÷ {model.dw/10} cm = {oranTam.toFixed(2)}{!tamSayi ? ` → üste yuvarlandı` : ""})
+                      → {dilimSayisi} dilim ({uzunluk} mm ÷ {model.dw} mm = {oranTam.toFixed(2)}{!tamSayi ? ` → üste yuvarlandı` : ""})
                       {!tamSayi && (
                         <span style={{display:"block", marginTop:2, fontSize:11, color:"#888", fontWeight:400}}>
-                          Gerçek radyatör uzunluğu: {gercekUzunlukCm} cm
+                          Gerçek radyatör uzunluğu: {gercekUzunlukMm} mm
                         </span>
                       )}
                     </div>
