@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 
 // ─── VERİ ───────────────────────────────────────────────────────────────────
 const RADYATOR_DATA = {
@@ -98,6 +98,15 @@ export default function RadyalTeklif() {
   const [adet, setAdet] = useState(1);
   const [mahal, setMahal] = useState("");
   const [renk, setRenk] = useState(RENKLER[0]);
+
+  // ── Responsive
+  const [isMobile, setIsMobile] = useState(() => typeof window !== "undefined" && window.innerWidth < 768);
+  const [activeTab, setActiveTab] = useState("form"); // "form" | "teklif"
+  useEffect(() => {
+    const fn = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener("resize", fn);
+    return () => window.removeEventListener("resize", fn);
+  }, []);
   const [karBoleni, setKarBoleni] = useState(0.80);  // kar = fiyat / bölen
   const LISTE_ISKONTO = 0.44; // listeden %44 iskonto sabit
   const [satirlar, setSatirlar] = useState([]);
@@ -154,6 +163,7 @@ export default function RadyalTeklif() {
     };
     setSatirlar(p => [...p, satir]);
     setMahal(""); setUzunluk(""); setAdet(1);
+    if (isMobile) setActiveTab("teklif");
   };
 
   const sil = (id) => setSatirlar(p => p.filter(s => s.id !== id));
@@ -189,33 +199,60 @@ export default function RadyalTeklif() {
       <div style={{
         background:"linear-gradient(135deg, #1a1d27 0%, #12141e 100%)",
         borderBottom:"1px solid #2a2d3e",
-        padding:"20px 32px",
-        display:"flex", alignItems:"center", gap:16
+        padding: isMobile ? "14px 16px" : "20px 32px",
+        display:"flex", alignItems: isMobile ? "flex-start" : "center",
+        flexDirection: isMobile ? "column" : "row",
+        gap:12
       }}>
-        <div style={{
-          background:"linear-gradient(135deg, #e8640a, #f5a623)",
-          borderRadius:8, width:40, height:40,
-          display:"flex", alignItems:"center", justifyContent:"center",
-          fontSize:18, fontWeight:700, color:"#fff", letterSpacing:-1
-        }}>R</div>
-        <div>
-          <div style={{fontSize:18,fontWeight:700,color:"#f0ece5",letterSpacing:-0.5}}>Radyal Teklif Hazırlama</div>
-          <div style={{fontSize:12,color:"#666",marginTop:1}}>01.05.2026 Fiyat Listesi • KDV Hariç • Fabrika Teslim</div>
+        <div style={{display:"flex", alignItems:"center", gap:12, width:"100%"}}>
+          <div style={{
+            background:"linear-gradient(135deg, #e8640a, #f5a623)",
+            borderRadius:8, width:36, height:36, flexShrink:0,
+            display:"flex", alignItems:"center", justifyContent:"center",
+            fontSize:16, fontWeight:700, color:"#fff", letterSpacing:-1
+          }}>R</div>
+          <div>
+            <div style={{fontSize: isMobile ? 15 : 18, fontWeight:700, color:"#f0ece5", letterSpacing:-0.5}}>Radyal Teklif Hazırlama</div>
+            <div style={{fontSize:11, color:"#666", marginTop:1}}>01.05.2026 Fiyat Listesi • KDV Hariç • Fabrika Teslim</div>
+          </div>
         </div>
-        <div style={{marginLeft:"auto",display:"flex",gap:12}}>
+        <div style={{display:"flex", gap:8, width: isMobile ? "100%" : "auto", marginLeft: isMobile ? 0 : "auto"}}>
           <input placeholder="Müşteri adı" value={musterı} onChange={e=>setMusteri(e.target.value)}
-            style={inputSt} />
+            style={{...inputSt, flex:1}} />
           <input placeholder="Proje adı" value={projeAdi} onChange={e=>setProjeAdi(e.target.value)}
-            style={inputSt} />
+            style={{...inputSt, flex:1}} />
         </div>
       </div>
 
-      <div style={{padding:"24px 32px", display:"grid", gridTemplateColumns:"380px 1fr", gap:24, alignItems:"start"}}>
+      {/* MOBİL SEKMELER */}
+      {isMobile && (
+        <div style={{display:"flex", background:"#12141e", borderBottom:"1px solid #2a2d3e"}}>
+          {["form","teklif"].map(tab => (
+            <button key={tab} onClick={()=>setActiveTab(tab)} style={{
+              flex:1, padding:"12px 0", border:"none", cursor:"pointer",
+              background: activeTab===tab ? "#1a1d27" : "transparent",
+              color: activeTab===tab ? "#e8640a" : "#666",
+              fontWeight: activeTab===tab ? 700 : 400,
+              fontSize:13, borderBottom: activeTab===tab ? "2px solid #e8640a" : "2px solid transparent"
+            }}>
+              {tab==="form" ? "🛒 Ürün Ekle" : `📋 Teklif (${satirlar.length})`}
+            </button>
+          ))}
+        </div>
+      )}
+
+      <div style={{
+        padding: isMobile ? "16px" : "24px 32px",
+        display: isMobile ? "block" : "grid",
+        gridTemplateColumns: "380px 1fr",
+        gap:24, alignItems:"start"
+      }}>
 
         {/* SOL PANEL - GİRİŞ */}
         <div style={{
           background:"#1a1d27", borderRadius:12, border:"1px solid #2a2d3e",
-          overflow:"hidden"
+          overflow:"hidden",
+          display: isMobile && activeTab !== "form" ? "none" : "block"
         }}>
           <div style={{padding:"16px 20px", borderBottom:"1px solid #2a2d3e",
             background:"linear-gradient(90deg,#1e2135,#1a1d27)",
@@ -415,7 +452,10 @@ export default function RadyalTeklif() {
         </div>
 
         {/* SAĞ PANEL - TEKLİF */}
-        <div>
+        <div style={{
+          marginTop: isMobile ? 0 : 0,
+          display: isMobile && activeTab !== "teklif" ? "none" : "block"
+        }}>
           {/* Başlık */}
           {(musterı || projeAdi) && (
             <div style={{marginBottom:16,padding:"12px 16px",background:"#1a1d27",
@@ -442,29 +482,63 @@ export default function RadyalTeklif() {
                 background:"#1a1d27",borderRadius:12,border:"1px solid #2a2d3e",
                 overflow:"hidden"
               }}>
-                {/* Tablo Header */}
-                <div style={{
-                  display:"grid",
-                  gridTemplateColumns:"100px 70px 100px 80px 50px 50px 80px 90px 36px",
-                  padding:"10px 16px",
-                  background:"#12141e",
-                  borderBottom:"1px solid #2a2d3e",
-                  fontSize:11, color:"#555", fontWeight:600, letterSpacing:0.8, textTransform:"uppercase",
-                  gap:8
-                }}>
-                  <span>Mahal</span>
-                  <span>Model</span>
-                  <span>Renk</span>
-                  <span>Yükseklik</span>
-                  <span>Dilim</span>
-                  <span>Watt</span>
-                  <span>Birim ₺</span>
-                  <span>Adet</span>
-                  <span style={{textAlign:"right"}}>Toplam ₺</span>
-                  <span></span>
-                </div>
+                {/* Tablo Header - sadece desktop */}
+                {!isMobile && (
+                  <div style={{
+                    display:"grid",
+                    gridTemplateColumns:"100px 70px 100px 80px 50px 50px 80px 90px 36px",
+                    padding:"10px 16px",
+                    background:"#12141e",
+                    borderBottom:"1px solid #2a2d3e",
+                    fontSize:11, color:"#555", fontWeight:600, letterSpacing:0.8, textTransform:"uppercase",
+                    gap:8
+                  }}>
+                    <span>Mahal</span>
+                    <span>Model</span>
+                    <span>Renk</span>
+                    <span>Yükseklik</span>
+                    <span>Dilim</span>
+                    <span>Watt</span>
+                    <span>Birim ₺</span>
+                    <span>Adet</span>
+                    <span style={{textAlign:"right"}}>Toplam ₺</span>
+                    <span></span>
+                  </div>
+                )}
 
-                {satirlar.map((s,i) => (
+                {satirlar.map((s,i) => isMobile ? (
+                  /* MOBİL KART */
+                  <div key={s.id} style={{
+                    padding:"12px 16px",
+                    borderBottom: i < satirlar.length-1 ? "1px solid #1e2135" : "none",
+                    background: i%2===0 ? "transparent" : "#161821",
+                    position:"relative"
+                  }}>
+                    <div style={{display:"flex", justifyContent:"space-between", alignItems:"flex-start"}}>
+                      <div>
+                        <span style={{fontWeight:700,color:"#e8640a",fontSize:15}}>{s.kod}</span>
+                        <span style={{color:"#888",fontSize:12,marginLeft:8}}>{s.ad}</span>
+                      </div>
+                      <button onClick={()=>sil(s.id)} style={{
+                        background:"none",border:"none",color:"#e05a5a",
+                        cursor:"pointer",fontSize:20,padding:0,lineHeight:1,marginLeft:8
+                      }}>×</button>
+                    </div>
+                    <div style={{marginTop:6,display:"grid",gridTemplateColumns:"1fr 1fr",gap:"4px 12px",fontSize:12,color:"#888"}}>
+                      {s.mahal && s.mahal!=="-" && <span>📍 {s.mahal}</span>}
+                      <span>↕ {s.yukseklik} mm</span>
+                      <span>↔ {s.uzunluk} ({s.dilim} dilim)</span>
+                      <span>⚡ {s.watt} W</span>
+                      <span style={{color:s.renkFark>0?"#e8640a":"#888"}}>{s.renkAd}{s.renkFark>0?` (+%${s.renkFark})`:""}</span>
+                      <span>× {s.adet} adet</span>
+                    </div>
+                    <div style={{marginTop:8,display:"flex",justifyContent:"flex-end",alignItems:"baseline",gap:8}}>
+                      <span style={{fontSize:11,color:"#555"}}>birim ₺{fmt(s.birim)}</span>
+                      <span style={{fontWeight:700,color:"#8dd45c",fontSize:16}}>₺{fmt(s.toplam)}</span>
+                    </div>
+                  </div>
+                ) : (
+                  /* DESKTOP SATIR */
                   <div key={s.id} style={{
                     display:"grid",
                     gridTemplateColumns:"100px 70px 100px 80px 50px 50px 80px 90px 36px",
