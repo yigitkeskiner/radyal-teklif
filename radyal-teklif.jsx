@@ -30,30 +30,211 @@ const RADYATOR_DATA = {
 };
 
 const HAVLUPAN_DATA = {
-  ERL:  { ad:"Erguvan Light",   tip:"Havlupan", byH:true,  v:[{h:500,w:231,p:4084},{h:600,w:241,p:4371},{h:700,w:313,p:5212},{h:800,w:362,p:5854},{h:900,w:386,p:6319},{h:1000,w:434,p:6980},{h:1100,w:506,p:7793},{h:1200,w:578,p:8633},{h:1500,w:699,p:10384},{h:1800,w:868,p:12510}]},
-  MNE:  { ad:"Manolya Elite",   tip:"Havlupan", byH:true,  v:[{h:500,w:237,p:3959},{h:600,w:316,p:4856},{h:700,w:356,p:5427},{h:800,w:370,p:5691},{h:900,w:435,p:6567},{h:1000,w:475,p:7130},{h:1100,w:554,p:8022},{h:1200,w:576,p:8280},{h:1500,w:752,p:10611},{h:1800,w:870,p:12313}]},
-  AK:   { ad:"Akasya",          tip:"Havlupan", byH:true,  v:[{h:500,w:337,p:4092},{h:600,w:351,p:4399},{h:700,w:422,p:5186},{h:800,w:506,p:5977},{h:900,w:526,p:6284},{h:1000,w:590,p:6986},{h:1100,w:675,p:7862},{h:1250,w:843,p:9134},{h:1500,w:970,p:10759},{h:1800,w:1228,p:13150}]},
-  VT:   { ad:"Violet",          tip:"Havlupan", byH:true,  v:[{h:500,w:259,p:3869},{h:600,w:323,p:4559},{h:700,w:388,p:5228},{h:800,w:453,p:5908},{h:900,w:471,p:6221},{h:1000,w:517,p:6888},{h:1100,w:582,p:7570},{h:1200,w:605,p:7894},{h:1500,w:776,p:9912},{h:1800,w:906,p:11575}]},
-  VTL:  { ad:"Violet Line",     tip:"Havlupan", byH:true,  v:[{h:500,w:230,p:3313},{h:600,w:287,p:3910},{h:700,w:345,p:4487},{h:800,w:402,p:5064},{h:900,w:419,p:5342},{h:1000,w:460,p:5911},{h:1100,w:517,p:6496},{h:1200,w:538,p:6775},{h:1500,w:690,p:8506},{h:1800,w:805,p:9948}]},
-  VTE:  { ad:"Violet Elite",    tip:"Havlupan", byH:true,  v:[{h:500,w:210,p:3127},{h:600,w:262,p:3669},{h:700,w:314,p:4212},{h:800,w:367,p:4743},{h:900,w:382,p:5004},{h:1000,w:419,p:5563},{h:1100,w:472,p:6067},{h:1200,w:491,p:6338},{h:1500,w:629,p:7923},{h:1800,w:734,p:9257}]},
-  ZM:   { ad:"Zambak",          tip:"Havlupan", byH:true,  v:[{h:500,w:271,p:5058},{h:600,w:361,p:6104},{h:700,w:406,p:6871},{h:800,w:422,p:7207},{h:900,w:496,p:8292},{h:1000,w:541,p:9387},{h:1100,w:631,p:10077},{h:1200,w:657,p:10422},{h:1500,w:857,p:13292},{h:1800,w:992,p:15432}]},
-  YS:   { ad:"Yasemin",         tip:"Havlupan", byH:true,  v:[{h:485,w:203,p:6346},{h:625,w:237,p:7437},{h:695,w:271,p:8268},{h:765,w:304,p:9082},{h:905,w:372,p:10744},{h:1045,w:406,p:11850},{h:1115,w:440,p:12641},{h:1255,w:457,p:14286},{h:1465,w:575,p:16200},{h:1745,w:643,p:18340}]},
-  YSL:  { ad:"Yasemin Line",    tip:"Havlupan", byH:true,  v:[{h:485,w:203,p:6378},{h:625,w:237,p:7473},{h:695,w:271,p:8309},{h:765,w:304,p:9128},{h:905,w:372,p:10783},{h:1045,w:406,p:11792},{h:1115,w:440,p:12705},{h:1255,w:457,p:14377},{h:1465,w:575,p:16283},{h:1745,w:643,p:18448}]},
-  HLH:  { ad:"Hane Line Hvlp", tip:"Havlupan", byH:true,  v:[{h:1000,w:345,p:7110},{h:1250,w:422,p:8066},{h:1500,w:495,p:11429},{h:1000,w:460,p:8707},{h:1250,w:562,p:9903},{h:1500,w:660,p:13536},{h:1000,w:575,p:10245},{h:1250,w:703,p:11740},{h:1500,w:825,p:15643}]},
-  TWP:  { ad:"Tower Elips Hvlp",tip:"Havlupan", byH:true,  v:[{h:500,w:175,p:5230},{h:600,w:211,p:5607},{h:700,w:246,p:5992},{h:800,w:281,p:6379},{h:900,w:316,p:6731},{h:1000,w:351,p:7134},{h:1100,w:386,p:7538},{h:1200,w:421,p:7926},{h:1500,w:526,p:11042},{h:1800,w:632,p:12104}]},
-  FDE:  { ad:"Defne (Flower)",  tip:"Havlupan", byH:true,  v:[{h:1000,w:426,p:12565},{h:1200,w:510,p:13735}]},
-  FLA:  { ad:"Lale (Flower)",   tip:"Havlupan", byH:true,  v:[{h:1000,w:413,p:22770},{h:1200,w:495,p:25161}]},
-  FLV:  { ad:"Lavanta (Flower)",tip:"Havlupan", byH:true,  v:[{h:1000,w:461,p:19867},{h:1200,w:554,p:22284}]},
-  PRE510:{ ad:"Reyhan 510 Satine",tip:"Havlupan",byH:true, v:[{h:800,w:367,p:36656},{h:1000,w:477,p:46662}]},
-  PRE550:{ ad:"Reyhan 550 Satine",tip:"Havlupan",byH:true, v:[{h:800,w:396,p:37543},{h:1000,w:515,p:47812}]},
-  PKA:  { ad:"Kardelen Satine", tip:"Havlupan", byH:true,  v:[{h:1000,w:360,p:31048},{h:1200,w:432,p:33660},{h:1500,w:540,p:37582}]},
-  PANS: { ad:"Anemon Satine",   tip:"Havlupan", byH:true,  v:[{h:1000,w:258,p:25960},{h:1400,w:379,p:31951}]},
-  PANA: { ad:"Anemon Ayna Polisaj",tip:"Havlupan",byH:true,v:[{h:1000,w:258,p:35945},{h:1400,w:379,p:45930}]},
-  PLOS: { ad:"Lotus Satine",    tip:"Havlupan", byH:true,  v:[{h:750,w:237,p:21854},{h:1200,w:373,p:31692},{h:1500,w:464,p:36252}]},
-  PLOA: { ad:"Lotus Ayna Polisaj",tip:"Havlupan",byH:true, v:[{h:750,w:237,p:26225},{h:1200,w:373,p:38031},{h:1500,w:464,p:43501}]},
+  // t = model tipi (PDF'deki TİP kolonu, ör. "5/5", "5/10")
+  ERL:  { ad:"Erguvan Light",      tip:"Havlupan", byH:true,  v:[{h:500,t:"5/5",w:231,p:4084},{h:600,t:"5/6",w:241,p:4371},{h:700,t:"5/7",w:313,p:5212},{h:800,t:"5/8",w:362,p:5854},{h:900,t:"5/9",w:386,p:6319},{h:1000,t:"5/10",w:434,p:6980},{h:1100,t:"5/11",w:506,p:7793},{h:1200,t:"5/12",w:578,p:8633},{h:1500,t:"5/15",w:699,p:10384},{h:1800,t:"5/18",w:868,p:12510}]},
+  MNE:  { ad:"Manolya Elite",      tip:"Havlupan", byH:true,  v:[{h:500,t:"5/5",w:237,p:3959},{h:600,t:"5/6",w:316,p:4856},{h:700,t:"5/7",w:356,p:5427},{h:800,t:"5/8",w:370,p:5691},{h:900,t:"5/9",w:435,p:6567},{h:1000,t:"5/10",w:475,p:7130},{h:1100,t:"5/11",w:554,p:8022},{h:1200,t:"5/12",w:576,p:8280},{h:1500,t:"5/15",w:752,p:10611},{h:1800,t:"5/18",w:870,p:12313}]},
+  AK:   { ad:"Akasya",             tip:"Havlupan", byH:true,  v:[{h:500,t:"5/5",w:337,p:4092},{h:600,t:"5/6",w:351,p:4399},{h:700,t:"5/7",w:422,p:5186},{h:800,t:"5/8",w:506,p:5977},{h:900,t:"5/9",w:526,p:6284},{h:1000,t:"5/10",w:590,p:6986},{h:1100,t:"5/11",w:675,p:7862},{h:1250,t:"5/12",w:843,p:9134},{h:1500,t:"5/15",w:970,p:10759},{h:1800,t:"5/18",w:1228,p:13150}]},
+  VT:   { ad:"Violet",             tip:"Havlupan", byH:true,  v:[{h:500,t:"5/5",w:259,p:3869},{h:600,t:"5/6",w:323,p:4559},{h:700,t:"5/7",w:388,p:5228},{h:800,t:"5/8",w:453,p:5908},{h:900,t:"5/9",w:471,p:6221},{h:1000,t:"5/10",w:517,p:6888},{h:1100,t:"5/11",w:582,p:7570},{h:1200,t:"5/12",w:605,p:7894},{h:1500,t:"5/15",w:776,p:9912},{h:1800,t:"5/18",w:906,p:11575}]},
+  VTL:  { ad:"Violet Line",        tip:"Havlupan", byH:true,  v:[{h:500,t:"5/5",w:230,p:3313},{h:600,t:"5/6",w:287,p:3910},{h:700,t:"5/7",w:345,p:4487},{h:800,t:"5/8",w:402,p:5064},{h:900,t:"5/9",w:419,p:5342},{h:1000,t:"5/10",w:460,p:5911},{h:1100,t:"5/11",w:517,p:6496},{h:1200,t:"5/12",w:538,p:6775},{h:1500,t:"5/15",w:690,p:8506},{h:1800,t:"5/18",w:805,p:9948}]},
+  VTE:  { ad:"Violet Elite",       tip:"Havlupan", byH:true,  v:[{h:500,t:"5/5",w:210,p:3127},{h:600,t:"5/6",w:262,p:3669},{h:700,t:"5/7",w:314,p:4212},{h:800,t:"5/8",w:367,p:4743},{h:900,t:"5/9",w:382,p:5004},{h:1000,t:"5/10",w:419,p:5563},{h:1100,t:"5/11",w:472,p:6067},{h:1200,t:"5/12",w:491,p:6338},{h:1500,t:"5/15",w:629,p:7923},{h:1800,t:"5/18",w:734,p:9257}]},
+  ZM:   { ad:"Zambak",             tip:"Havlupan", byH:true,  v:[{h:500,t:"5/5",w:271,p:5058},{h:600,t:"5/6",w:361,p:6104},{h:700,t:"5/7",w:406,p:6871},{h:800,t:"5/8",w:422,p:7207},{h:900,t:"5/9",w:496,p:8292},{h:1000,t:"5/10",w:541,p:9387},{h:1100,t:"5/11",w:631,p:10077},{h:1200,t:"5/12",w:657,p:10422},{h:1500,t:"5/15",w:857,p:13292},{h:1800,t:"5/18",w:992,p:15432}]},
+  YS:   { ad:"Yasemin",            tip:"Havlupan", byH:true,  v:[{h:485,t:"5/5",w:203,p:6346},{h:625,t:"5/6",w:237,p:7437},{h:695,t:"5/7",w:271,p:8268},{h:765,t:"5/8",w:304,p:9082},{h:905,t:"5/9",w:372,p:10744},{h:1045,t:"5/10",w:406,p:11850},{h:1115,t:"5/11",w:440,p:12641},{h:1255,t:"5/12",w:457,p:14286},{h:1465,t:"5/15",w:575,p:16200},{h:1745,t:"5/17",w:643,p:18340}]},
+  YSL:  { ad:"Yasemin Line",       tip:"Havlupan", byH:true,  v:[{h:485,t:"5/5",w:203,p:6378},{h:625,t:"5/6",w:237,p:7473},{h:695,t:"5/7",w:271,p:8309},{h:765,t:"5/8",w:304,p:9128},{h:905,t:"5/9",w:372,p:10783},{h:1045,t:"5/10",w:406,p:11792},{h:1115,t:"5/11",w:440,p:12705},{h:1255,t:"5/12",w:457,p:14377},{h:1465,t:"5/15",w:575,p:16283},{h:1745,t:"5/17",w:643,p:18448}]},
+  HLH3: { ad:"Hane Line Hvlp – 3 Dilim", tip:"Havlupan", byH:true, v:[{h:1000,t:"3",w:345,p:7110},{h:1250,t:"3",w:422,p:8066},{h:1500,t:"3",w:495,p:11429}]},
+  HLH4: { ad:"Hane Line Hvlp – 4 Dilim", tip:"Havlupan", byH:true, v:[{h:1000,t:"4",w:460,p:8707},{h:1250,t:"4",w:562,p:9903},{h:1500,t:"4",w:660,p:13536}]},
+  HLH5: { ad:"Hane Line Hvlp – 5 Dilim", tip:"Havlupan", byH:true, v:[{h:1000,t:"5",w:575,p:10245},{h:1250,t:"5",w:703,p:11740},{h:1500,t:"5",w:825,p:15643}]},
+  TWP:  { ad:"Tower Elips Hvlp",   tip:"Havlupan", byH:true,  v:[{h:500,t:"2",w:175,p:5230},{h:600,t:"2",w:211,p:5607},{h:700,t:"2",w:246,p:5992},{h:800,t:"2",w:281,p:6379},{h:900,t:"2",w:316,p:6731},{h:1000,t:"2",w:351,p:7134},{h:1100,t:"2",w:386,p:7538},{h:1200,t:"2",w:421,p:7926},{h:1500,t:"2",w:526,p:11042},{h:1800,t:"2",w:632,p:12104}]},
+  FDE:  { ad:"Defne (Flower)",     tip:"Havlupan", byH:true,  v:[{h:1000,t:"400/1000",w:426,p:12565},{h:1200,t:"400/1200",w:510,p:13735}]},
+  FLA:  { ad:"Lale (Flower)",      tip:"Havlupan", byH:true,  v:[{h:1000,t:"500/1000",w:413,p:22770},{h:1200,t:"500/1200",w:495,p:25161}]},
+  FLV:  { ad:"Lavanta (Flower)",   tip:"Havlupan", byH:true,  v:[{h:1000,t:"500/1000",w:461,p:19867},{h:1200,t:"500/1200",w:554,p:22284}]},
+  PRE510:{ ad:"Reyhan 510 Satine", tip:"Havlupan", byH:true,  v:[{h:800,t:"RE-510/800",w:367,p:36656},{h:1000,t:"RE-510/1000",w:477,p:46662}]},
+  PRE550:{ ad:"Reyhan 550 Satine", tip:"Havlupan", byH:true,  v:[{h:800,t:"RE-550/800",w:396,p:37543},{h:1000,t:"RE-550/1000",w:515,p:47812}]},
+  PKA:  { ad:"Kardelen Satine",    tip:"Havlupan", byH:true,  v:[{h:1000,t:"KA-280/1000",w:360,p:31048},{h:1200,t:"KA-280/1200",w:432,p:33660},{h:1500,t:"KA-280/1500",w:540,p:37582}]},
+  PANS: { ad:"Anemon Satine",      tip:"Havlupan", byH:true,  v:[{h:1000,t:"PAN-500/1000",w:258,p:25960},{h:1400,t:"PAN-500/1400",w:379,p:31951}]},
+  PANA: { ad:"Anemon Ayna Polisaj",tip:"Havlupan", byH:true,  v:[{h:1000,t:"PAN-500/1000",w:258,p:35945},{h:1400,t:"PAN-500/1400",w:379,p:45930}]},
+  PLOS: { ad:"Lotus Satine",       tip:"Havlupan", byH:true,  v:[{h:750,t:"PLO-500/750",w:237,p:21854},{h:1200,t:"PLO-500/1200",w:373,p:31692},{h:1500,t:"PLO-500/1500",w:464,p:36252}]},
+  PLOA: { ad:"Lotus Ayna Polisaj", tip:"Havlupan", byH:true,  v:[{h:750,t:"PLO-500/750",w:237,p:26225},{h:1200,t:"PLO-500/1200",w:373,p:38031},{h:1500,t:"PLO-500/1500",w:464,p:43501}]},
 };
 
-const ALL_MODELS = { ...RADYATOR_DATA, ...HAVLUPAN_DATA };
+// ─── VANA & MONTAJ ELEMANLARI (NET SATIŞ FİYATI – iskonto uygulanmaz) ────────
+// netFiyat: true → sisteme direkt alış fiyatı girilir, kar böleni üstünden satış yapılır
+const VANA_DATA = {
+  // ── VANALAR (Beyaz PPR/PEX) ──
+  V15000: { ad:"Köşe Radyatör Vanası Beyaz PPR",           tip:"Vana", netFiyat:true, p:394  },
+  V15000E:{ ad:"Köşe Radyatör Vanası Eko Beyaz PPR",       tip:"Vana", netFiyat:true, p:339  },
+  V15001: { ad:"Köşe Radyatör Vanası Beyaz PEX 16x2",      tip:"Vana", netFiyat:true, p:467  },
+  V15001E:{ ad:"Köşe Radyatör Vanası Eko Beyaz PEX 16x2",  tip:"Vana", netFiyat:true, p:426  },
+  V15003: { ad:"Köşe Radyatör Dönüş Vanası PEX 16x2",      tip:"Vana", netFiyat:true, p:427  },
+  V15004: { ad:"Düz Radyatör Vanası Beyaz PPR",             tip:"Vana", netFiyat:true, p:393  },
+  V15006: { ad:"Düz Radyatör Dönüş Vanası PPR",             tip:"Vana", netFiyat:true, p:382  },
+  V15007: { ad:"Düz Radyatör Dönüş Vanası PEX 16x2",       tip:"Vana", netFiyat:true, p:447  },
+  V15008: { ad:"H Ventil Dikey 3/8 16x2 PEX",              tip:"Vana", netFiyat:true, p:1090 },
+  V15009: { ad:"1/2 PEX 16x2 Mini Küresel Tornavida",       tip:"Vana", netFiyat:true, p:298  },
+  V15010: { ad:"3/8- PEX 16x2 Direkt Giriş",               tip:"Vana", netFiyat:true, p:237  },
+  V15011: { ad:"1/2 İç Dişli Rakor-PEX 16x2",              tip:"Vana", netFiyat:true, p:198  },
+  V15012: { ad:"1/2 Dış Dişli Rakor-PEX 16x2",             tip:"Vana", netFiyat:true, p:213  },
+  V15013: { ad:"Köşe Radyatör Geri Dönüş Vanası PPR",       tip:"Vana", netFiyat:true, p:356  },
+  V15014: { ad:"Köşe Radyatör Geri Dönüş Vanası Eko PEX",  tip:"Vana", netFiyat:true, p:410  },
+  V15015: { ad:"Düz Radyatör Vanası PEX 16x2",              tip:"Vana", netFiyat:true, p:495  },
+  // ── VANALAR (Krom) ──
+  V15100: { ad:"Köşe Radyatör Vanası Krom PPR",             tip:"Vana", netFiyat:true, p:938  },
+  V15100E:{ ad:"Köşe Radyatör Vanası Eko Krom PPR",         tip:"Vana", netFiyat:true, p:688  },
+  V15101: { ad:"Köşe Radyatör Vanası Krom PEX 16x2",        tip:"Vana", netFiyat:true, p:1108 },
+  V15101E:{ ad:"Köşe Radyatör Vanası Eko Krom PEX 16x2",    tip:"Vana", netFiyat:true, p:789  },
+  V15102: { ad:"Köşe Radyatör Dönüş Vanası Krom PPR",       tip:"Vana", netFiyat:true, p:889  },
+  V15103E:{ ad:"Köşe Radyatör Dönüş Eko Krom PEX 16x2",    tip:"Vana", netFiyat:true, p:748  },
+  V15104: { ad:"Düz Radyatör Vanası Krom PPR",               tip:"Vana", netFiyat:true, p:962  },
+  V15106: { ad:"Kare Köşe Radyatör Vanası Krom PPR",         tip:"Vana", netFiyat:true, p:1394 },
+  V15107: { ad:"Kare Köşe Radyatör Vanası Krom PEX 16x2",   tip:"Vana", netFiyat:true, p:1439 },
+  V15108: { ad:"Kare Köşe Radyatör Vanası Saten PPR",        tip:"Vana", netFiyat:true, p:1394 },
+  V15109: { ad:"Kare Köşe Radyatör Vanası Saten PEX 16x2",  tip:"Vana", netFiyat:true, p:1471 },
+  V15110: { ad:"Düz Radyatör Dönüş Vanası Krom PPR",         tip:"Vana", netFiyat:true, p:962  },
+  V15111: { ad:"Köşe Radyatör Geri Dönüş Vanası Krom PEX",  tip:"Vana", netFiyat:true, p:988  },
+  V15112: { ad:"Düz Radyatör Vanası Krom PEX 16x2",          tip:"Vana", netFiyat:true, p:1120 },
+  V15113: { ad:"Düz Radyatör Dönüş Vanası Krom PEX 16x2",   tip:"Vana", netFiyat:true, p:1014 },
+  V15114: { ad:"Köşe Radyatör Dönüş Vanası Eko Krom PPR",   tip:"Vana", netFiyat:true, p:678  },
+  V15115: { ad:"Metal Volanlı Silindir Köşe Krom PPR",        tip:"Vana", netFiyat:true, p:1100 },
+  V15116: { ad:"Metal Volanlı Silindir Köşe Krom PEX",        tip:"Vana", netFiyat:true, p:1187 },
+  V15117: { ad:"Metal Volanlı Altın Köşe PPR",                tip:"Vana", netFiyat:true, p:1621 },
+  V15118: { ad:"Metal Volanlı Altın Köşe PEX 16x2",           tip:"Vana", netFiyat:true, p:1739 },
+  V15119: { ad:"Metal Volanlı Köşe Siyah PPR",                tip:"Vana", netFiyat:true, p:1079 },
+  V15120: { ad:"Metal Volanlı Köşe Siyah PEX 16x2",           tip:"Vana", netFiyat:true, p:1229 },
+  // ── SİLİNDİRİK VANALAR ──
+  V16000: { ad:"Silindir Köşe Beyaz PPR",                    tip:"Vana", netFiyat:true, p:605  },
+  V16001: { ad:"Silindir Köşe Beyaz PEX 16x2",               tip:"Vana", netFiyat:true, p:678  },
+  V16002: { ad:"Silindir Köşe Krom PPR",                     tip:"Vana", netFiyat:true, p:751  },
+  V16003: { ad:"Silindir Köşe Krom PEX 16x2",                tip:"Vana", netFiyat:true, p:819  },
+  V16004: { ad:"Silindir Köşe Sarı PPR",                     tip:"Vana", netFiyat:true, p:1155 },
+  V16005: { ad:"Silindir Köşe Sarı PEX 16x2",                tip:"Vana", netFiyat:true, p:1307 },
+  V16008: { ad:"Silindir Köşe Siyah PPR",                    tip:"Vana", netFiyat:true, p:605  },
+  V16009: { ad:"Silindir Köşe Siyah PEX 16x2",               tip:"Vana", netFiyat:true, p:678  },
+  V16010: { ad:"Silindir Köşe Antrasit PPR",                  tip:"Vana", netFiyat:true, p:605  },
+  V16011: { ad:"Silindir Köşe Antrasit PEX 16x2",             tip:"Vana", netFiyat:true, p:678  },
+  V16012: { ad:"Silindir Köşe Bakır Eskitme PPR",             tip:"Vana", netFiyat:true, p:1077 },
+  V16013: { ad:"Silindir Köşe Bakır Eskitme PEX 16x2",        tip:"Vana", netFiyat:true, p:1233 },
+  V16014: { ad:"Silindir Köşe Mat Nikel PPR",                 tip:"Vana", netFiyat:true, p:770  },
+  V16015: { ad:"Silindir Köşe Mat Nikel PEX 16x2",            tip:"Vana", netFiyat:true, p:882  },
+  V16018: { ad:"Silindir Köşe Krom Kısa PPR",                 tip:"Vana", netFiyat:true, p:600  },
+  V16019: { ad:"Silindir Köşe Krom Kısa PEX 16x2",            tip:"Vana", netFiyat:true, p:692  },
+  V16020: { ad:"Silindir Köşe Sarı Kısa PPR",                 tip:"Vana", netFiyat:true, p:1077 },
+  V16021: { ad:"Silindir Köşe Sarı Kısa PEX 16x2",            tip:"Vana", netFiyat:true, p:1233 },
+  V16030: { ad:"İç Köşe Radyatör Vanası Krom PEX 16x2",       tip:"Vana", netFiyat:true, p:1141 },
+  // ── ECA VANALAR ──
+  V17000: { ad:"ECA Köşe Radyatör Vanası Beyaz PPR",          tip:"Vana", netFiyat:true, p:254  },
+  V17001: { ad:"ECA Köşe Radyatör Vanası Beyaz PEX 16x2",     tip:"Vana", netFiyat:true, p:276  },
+  V17002: { ad:"ECA Köşe Radyatör Dönüş Vanası PPR",          tip:"Vana", netFiyat:true, p:307  },
+  V17003: { ad:"ECA Köşe Radyatör Dönüş Vanası PEX 16x2",     tip:"Vana", netFiyat:true, p:373  },
+  V17007: { ad:"ECA Köşe Radyatör Vanası Krom PEX 16x2",      tip:"Vana", netFiyat:true, p:436  },
+  V17014: { ad:"ECA Köşe Radyatör Vanası Krom PPR",            tip:"Vana", netFiyat:true, p:383  },
+  V17008: { ad:"ECA H-Ventil Dikey 3/8 16x2 PEX",             tip:"Vana", netFiyat:true, p:782  },
+  V17009: { ad:"ECA H-Ventil Köşe 3/8 16x2 PEX",              tip:"Vana", netFiyat:true, p:837  },
+  V17010: { ad:"ECA Kısa Krom Çekirdek",                      tip:"Vana", netFiyat:true, p:251  },
+  V17011: { ad:"ECA Uzun Krom Çekirdek",                      tip:"Vana", netFiyat:true, p:317  },
+  V17111: { ad:"ECA Termostatik Radyatör Valfi 1/2 Köşe PPRC",tip:"Vana", netFiyat:true, p:367  },
+  V17104: { ad:"ECA TRV4 Termostat Beyaz (15°C Ayarlı)",      tip:"Vana", netFiyat:true, p:418  },
+  V17115: { ad:"ECA TRV4 Termostat Siyah (15°C Ayarsız)",     tip:"Vana", netFiyat:true, p:468  },
+  V17105: { ad:"ECA TRV4 Termostat + Köşe Gövde PPRC",        tip:"Vana", netFiyat:true, p:733  },
+  V17110: { ad:"ECA TRV4 Termostat + Köşe Gövde + PEX 16x2", tip:"Vana", netFiyat:true, p:775  },
+  V17120: { ad:"ECA TRV4 Termostat Siyah + Köşe Gövde PPRC", tip:"Vana", netFiyat:true, p:773  },
+  V17121: { ad:"ECA TRV4 Siyah + Köşe Gövde + PEX 16x2",     tip:"Vana", netFiyat:true, p:815  },
+  V17122: { ad:"ECA TRV4 Termostat Krom (15°C Ayarsız)",      tip:"Vana", netFiyat:true, p:580  },
+  V17125: { ad:"ECA H-Ventil Dikey 1/2 16x2 PEX",             tip:"Vana", netFiyat:true, p:784  },
+  // ── DANFOSS ──
+  V18000: { ad:"Danfoss Termostat Beyaz (15°C Ayarlı)",        tip:"Vana", netFiyat:true, p:242  },
+  V18001: { ad:"Danfoss Termostat Beyaz (15°C Ayarsız)",       tip:"Vana", netFiyat:true, p:242  },
+  V18002: { ad:"Danfoss Termostat Silindir Krom",               tip:"Vana", netFiyat:true, p:1275 },
+  V18003: { ad:"Danfoss Termostat Silindir Beyaz",              tip:"Vana", netFiyat:true, p:930  },
+  V18022: { ad:"Danfoss Termostat Silindir Siyah",              tip:"Vana", netFiyat:true, p:1045 },
+  V18005: { ad:"Danfoss Termostatik Köşe Gövde PPR",            tip:"Vana", netFiyat:true, p:282  },
+  V18006: { ad:"Danfoss Termostatik Düz Gövde PPR",             tip:"Vana", netFiyat:true, p:282  },
+  V18007: { ad:"1/2-16x2 PEX Rakor Danfoss Uyumlu Nikel",      tip:"Vana", netFiyat:true, p:98   },
+  V18008: { ad:"Danfoss Uzun Çekirdek",                         tip:"Vana", netFiyat:true, p:837  },
+  V18009: { ad:"Danfoss Kısa Çekirdek",                         tip:"Vana", netFiyat:true, p:837  },
+  V18010: { ad:"Danfoss Multiblok Kompakt Termostatik Gövde",   tip:"Vana", netFiyat:true, p:1737 },
+  V18011: { ad:"Danfoss Termostat + Köşe Gövde PEX 16x2",      tip:"Vana", netFiyat:true, p:622  },
+  V18012: { ad:"Danfoss Silindir Krom + Köşe Gövde PPR",        tip:"Vana", netFiyat:true, p:1556 },
+  V18013: { ad:"Danfoss Silindir Krom + Köşe Gövde PEX 16x2",  tip:"Vana", netFiyat:true, p:1655 },
+  V18014: { ad:"Danfoss Termostat + Köşe Gövde PPRC",           tip:"Vana", netFiyat:true, p:524  },
+  V18020: { ad:"Danfoss Termostat Oval Beyaz (15°C Ayarlı)",    tip:"Vana", netFiyat:true, p:242  },
+  V18021: { ad:"Danfoss Termostat Oval Beyaz (15°C Ayarsız)",   tip:"Vana", netFiyat:true, p:242  },
+  V18023: { ad:"Danfoss Termostatik Köşe Gövde PPR Krom",       tip:"Vana", netFiyat:true, p:860  },
+  V18024: { ad:"Danfoss Termostatik Düz Gövde PPR Krom",        tip:"Vana", netFiyat:true, p:879  },
+  V18025: { ad:"1/2-16x2 PEX Rakor Danfoss Uyumlu Krom",       tip:"Vana", netFiyat:true, p:153  },
+  // ── KOMPAKT GİRİŞ BAĞLANTI SETLERİ ──
+  V70000: { ad:"Kompakt Giriş 3/8-1/2 PPR",                    tip:"Vana", netFiyat:true, p:200  },
+  V70001: { ad:"Kompakt Giriş 3/8-16x2 PEX",                   tip:"Vana", netFiyat:true, p:350  },
+  V70002: { ad:"Kompakt Mini Küresel Giriş 3/8-16x2 PEX",      tip:"Vana", netFiyat:true, p:620  },
+  V70003: { ad:"Kompakt H Ventil 3/8-16x2 PEX",                tip:"Vana", netFiyat:true, p:785  },
+  V70004: { ad:"Kompakt Köşe H Ventil 3/8-16x2 PEX",           tip:"Vana", netFiyat:true, p:840  },
+  V19001: { ad:"Kompakt Giriş 3/8-3/4 H Ventil Rakor",         tip:"Vana", netFiyat:true, p:290  },
+  // ECA SET
+  V70010: { ad:"Kompakt 3/8-16x2 PEX + ECA Termostat + Çekirdek (SET)",             tip:"Vana", netFiyat:true, p:975  },
+  V70011: { ad:"Kompakt 3/8-16x2 PEX + ECA Termostat (15°C Ayarlı) + Çekirdek (SET)", tip:"Vana", netFiyat:true, p:975  },
+  V70012: { ad:"Kompakt Mini Küresel 3/8-16x2 PEX + ECA Termostat + Çekirdek (SET)", tip:"Vana", netFiyat:true, p:1243 },
+  V70013: { ad:"Kompakt Mini Küresel + ECA Termostat (15°C Ayarlı) + Çekirdek (SET)", tip:"Vana", netFiyat:true, p:1243 },
+  V70014: { ad:"Kompakt H Ventil + ECA Termostat + Çekirdek (SET)",                  tip:"Vana", netFiyat:true, p:1410 },
+  V70015: { ad:"Kompakt H Ventil + ECA Termostat (15°C Ayarlı) + Çekirdek (SET)",   tip:"Vana", netFiyat:true, p:1410 },
+  V70019: { ad:"Kompakt 3/8-1/2 PPR + ECA Termostat + Çekirdek (SET)",              tip:"Vana", netFiyat:true, p:822  },
+  V70030: { ad:"Kompakt 3/8-16x2 PEX + ECA Termostat Siyah + Çekirdek (SET)",      tip:"Vana", netFiyat:true, p:1184 },
+  V70031: { ad:"Kompakt Mini Küresel + ECA Termostat Siyah + Çekirdek (SET)",       tip:"Vana", netFiyat:true, p:1313 },
+  V70032: { ad:"Kompakt H Ventil + ECA Termostat Siyah + Çekirdek (SET)",           tip:"Vana", netFiyat:true, p:1480 },
+  V70033: { ad:"Kompakt 3/8-1/2 PPR + ECA Termostat Siyah + Çekirdek (SET)",       tip:"Vana", netFiyat:true, p:892  },
+  V70040: { ad:"Kompakt 3/8-16x2 PEX + ECA TRV4 Krom + Çekirdek (SET)",           tip:"Vana", netFiyat:true, p:1185 },
+  V70041: { ad:"Kompakt Mini Küresel + ECA TRV4 Krom + Çekirdek (SET)",            tip:"Vana", netFiyat:true, p:1455 },
+  V70042: { ad:"Kompakt H Ventil + ECA TRV4 Krom + Çekirdek (SET)",               tip:"Vana", netFiyat:true, p:1620 },
+  V70043: { ad:"Kompakt 3/8-1/2 PPR + ECA TRV4 Krom + Çekirdek (SET)",           tip:"Vana", netFiyat:true, p:1035 },
+  // DANFOSS SET
+  V70100: { ad:"Kompakt 3/8-16x2 PEX + Danfoss Termostat + Çekirdek (SET)",        tip:"Vana", netFiyat:true, p:1025 },
+  V70101: { ad:"Kompakt 3/8-16x2 PEX + Danfoss (15°C Ayarlı) + Çekirdek (SET)",   tip:"Vana", netFiyat:true, p:1025 },
+  V70102: { ad:"Kompakt Mini Küresel + Danfoss Termostat + Çekirdek (SET)",         tip:"Vana", netFiyat:true, p:1462 },
+  V70104: { ad:"Kompakt H Ventil + Danfoss Termostat + Çekirdek (SET)",             tip:"Vana", netFiyat:true, p:1460 },
+  V70106: { ad:"Kompakt 3/8-16x2 PEX + Danfoss Termostat Krom + Çekirdek (SET)",  tip:"Vana", netFiyat:true, p:2062 },
+  V70107: { ad:"Kompakt Mini Küresel + Danfoss Krom + Çekirdek (SET)",             tip:"Vana", netFiyat:true, p:2499 },
+  V70108: { ad:"Kompakt H Ventil + Danfoss Krom + Çekirdek (SET)",                 tip:"Vana", netFiyat:true, p:2499 },
+  V70109: { ad:"Kompakt 3/8-1/2 PPR + Danfoss Termostat + Çekirdek (SET)",         tip:"Vana", netFiyat:true, p:871  },
+  V70110: { ad:"Kompakt 3/8-1/2 PPR + Danfoss (15°C Ayarlı) + Çekirdek (SET)",    tip:"Vana", netFiyat:true, p:871  },
+  V70111: { ad:"Kompakt 3/8-1/2 PPR + Danfoss Krom + Çekirdek (SET)",              tip:"Vana", netFiyat:true, p:1908 },
+  // ── ZEMİN MONTAJ SETİ ──
+  V27010: { ad:"Zemin Montaj Ayağı Metal Beyaz",               tip:"Vana", netFiyat:true, p:205  },
+  V27011: { ad:"Zemin Montaj Ayağı Metal Renkli",              tip:"Vana", netFiyat:true, p:205  },
+  V27020: { ad:"Zemin Montaj Ayağı ABS Tekli Beyaz",           tip:"Vana", netFiyat:true, p:200  },
+  V27021: { ad:"Zemin Montaj Ayağı ABS Tekli Krom",            tip:"Vana", netFiyat:true, p:300  },
+  V27030: { ad:"Zemin Montaj Ayağı ABS Kompak Beyaz",          tip:"Vana", netFiyat:true, p:240  },
+  V27031: { ad:"Zemin Montaj Ayağı ABS Kompak Krom",           tip:"Vana", netFiyat:true, p:420  },
+  // ── BORU GİZLEME KILIFLARI & ROZETLER ──
+  V50000: { ad:"Tekli Geçmeli Boru Kılıfı Beyaz",             tip:"Vana", netFiyat:true, p:25   },
+  V50010: { ad:"Tekli Geçmeli Boru Kılıfı Krom",              tip:"Vana", netFiyat:true, p:106  },
+  V50020: { ad:"Tekli Geçmeli Boru Kılıfı Gümüş",             tip:"Vana", netFiyat:true, p:106  },
+  V50030: { ad:"Tekli Geçmeli Boru Kılıfı Siyah",             tip:"Vana", netFiyat:true, p:26   },
+  V51000: { ad:"Tekli Yaylı Boru Kılıfı Beyaz",               tip:"Vana", netFiyat:true, p:66   },
+  V51010: { ad:"Tekli Yaylı Boru Kılıfı Krom",                tip:"Vana", netFiyat:true, p:116  },
+  V52000: { ad:"Çiftli Geçmeli Boru Kılıfı Beyaz",            tip:"Vana", netFiyat:true, p:53   },
+  V52010: { ad:"Çiftli Geçmeli Boru Kılıfı Krom",             tip:"Vana", netFiyat:true, p:280  },
+  V53000: { ad:"Çiftli Yaylı Boru Kılıfı Beyaz",              tip:"Vana", netFiyat:true, p:110  },
+  V53010: { ad:"Çiftli Yaylı Boru Kılıfı Krom",               tip:"Vana", netFiyat:true, p:190  },
+  V54000: { ad:"Havlupan Boru Kılıfı Beyaz",                  tip:"Vana", netFiyat:true, p:22   },
+  V54010: { ad:"Havlupan Boru Kılıfı Krom",                   tip:"Vana", netFiyat:true, p:40   },
+  V54050: { ad:"Havlupan Boru Kılıfı Altın",                  tip:"Vana", netFiyat:true, p:30   },
+  V55000: { ad:"Rozet Beyaz",                                  tip:"Vana", netFiyat:true, p:45   },
+  V55010: { ad:"Rozet Krom",                                   tip:"Vana", netFiyat:true, p:42   },
+  V60000: { ad:"Tekli Hareketli Boru Kılıfı Beyaz",           tip:"Vana", netFiyat:true, p:27   },
+  V60010: { ad:"Tekli Hareketli Boru Kılıfı Krom",            tip:"Vana", netFiyat:true, p:119  },
+  V61000: { ad:"Çiftli Hareketli Boru Kılıfı Beyaz",          tip:"Vana", netFiyat:true, p:37   },
+  V61010: { ad:"Çiftli Hareketli Boru Kılıfı Krom",           tip:"Vana", netFiyat:true, p:171  },
+  V62000: { ad:"Çiftli Hareketli Uzun Boru Kılıfı Beyaz",     tip:"Vana", netFiyat:true, p:33   },
+  V62010: { ad:"Çiftli Hareketli Uzun Boru Kılıfı Krom",      tip:"Vana", netFiyat:true, p:131  },
+  V63000: { ad:"Havlupan Hareketli Boru Kılıfı PEX Beyaz",   tip:"Vana", netFiyat:true, p:21   },
+  V63010: { ad:"Havlupan Hareketli Boru Kılıfı PEX Krom",    tip:"Vana", netFiyat:true, p:86   },
+  V64000: { ad:"Havlupan Hareketli Boru Kılıfı PPR Beyaz",   tip:"Vana", netFiyat:true, p:58   },
+  V64010: { ad:"Havlupan Hareketli Boru Kılıfı PPR Krom",    tip:"Vana", netFiyat:true, p:126  },
+  // ── İNHİBÜTÖR ──
+  V80000: { ad:"R-24 İnhibütör 25 kg Bidon",                  tip:"Vana", netFiyat:true, p:15678 },
+  V80001: { ad:"R-24 İnhibütör 1000 gr Plastik Şişe",         tip:"Vana", netFiyat:true, p:622   },
+  V80002: { ad:"R-24 İnhibütör 500 gr Plastik Şişe",          tip:"Vana", netFiyat:true, p:324   },
+  V80003: { ad:"R-24 İnhibütör 250 gr Plastik Şişe",          tip:"Vana", netFiyat:true, p:174   },
+};
+
+const ALL_MODELS = { ...RADYATOR_DATA, ...HAVLUPAN_DATA, ...VANA_DATA };
 
 const RENKLER = [
   { kod:"RAL 9010", ad:"Kırık Beyaz",         fark:0,  grup:"Standart" },
@@ -108,38 +289,78 @@ export default function RadyalTeklif() {
     return () => window.removeEventListener("resize", fn);
   }, []);
   const [karBoleni, setKarBoleni] = useState(0.80);  // kar = fiyat / bölen
-  const LISTE_ISKONTO = 0.44; // listeden %44 iskonto sabit
   const [satirlar, setSatirlar] = useState([]);
   const [musterı, setMusteri] = useState("");
   const [projeAdi, setProjeAdi] = useState("");
 
   const model = ALL_MODELS[modelKey];
   const isHavlupan = !!model?.byH;
-  const seciliVaryant = model?.v.find(v => v.h === parseInt(height));
+  const isVana = !!model?.netFiyat;
+  const seciliVaryant = isVana ? { h:0, w:0, p: model.p } : model?.v.find(v => v.h === parseInt(height));
 
   // Radyatör: dilim hesabı
-  const dilimSayisi = !isHavlupan && seciliVaryant && uzunluk
+  const dilimSayisi = !isHavlupan && !isVana && seciliVaryant && uzunluk
     ? Math.ceil(parseFloat(uzunluk) / model.dw)
     : null;
   // Yuvarlama sonrası gerçek (üretilecek) radyatör uzunluğu
-  const gercekUzunluk = (!isHavlupan && dilimSayisi && model) ? dilimSayisi * model.dw : null;
+  const gercekUzunluk = (!isHavlupan && !isVana && dilimSayisi && model) ? dilimSayisi * model.dw : null;
 
   // Toplam fiyat (birim)
   const birimFiyat = seciliVaryant ? seciliVaryant.p : null;
-  const hamFiyat = !isHavlupan
+  const hamFiyat = !isHavlupan && !isVana
     ? (birimFiyat && dilimSayisi ? birimFiyat * dilimSayisi : null)
     : birimFiyat;
   const renkFark = renk ? renk.fark : 0;
-  // Maliyet: liste * (1-44%) * (1+renk%) * (1-ekstraIsk%)
-  const maliyetBirim = birimFiyat ? birimFiyat * (1 - LISTE_ISKONTO) * (1 + renkFark/100) : null;
+  // Maliyet:
+  //   radyatör  → liste * (1-44%) * (1+renk%)
+  //   havlupan  → liste * (1-46%) * (1+renk%)
+  //   vana/mont → net liste fiyatı (iskonto yok, renk farkı da yok)
+  const LISTE_ISKONTO_RAD = 0.44;
+  const LISTE_ISKONTO_HVL = 0.46;
+  const maliyetBirim = birimFiyat
+    ? isVana
+      ? birimFiyat  // net fiyat, direkt maliyet
+      : isHavlupan
+        ? birimFiyat * (1 - LISTE_ISKONTO_HVL) * (1 + renkFark/100)
+        : birimFiyat * (1 - LISTE_ISKONTO_RAD) * (1 + renkFark/100)
+    : null;
   const birimFiyatRenkli = maliyetBirim; // maliyet = alış fiyatı
   const satışBirim = maliyetBirim ? maliyetBirim / karBoleni : null;
-  const toplamFiyat = satışBirim && (hamFiyat !== null) ? satışBirim * (!isHavlupan ? (dilimSayisi||0) : 1) * adet : null;
-  const maliyetToplam = maliyetBirim ? maliyetBirim * (!isHavlupan ? (dilimSayisi||0) : 1) * adet : null;
+  const toplamFiyat = satışBirim && (hamFiyat !== null) ? satışBirim * (!isHavlupan && !isVana ? (dilimSayisi||0) : 1) * adet : null;
+  const maliyetToplam = maliyetBirim ? maliyetBirim * (!isHavlupan && !isVana ? (dilimSayisi||0) : 1) * adet : null;
   const karTL = (toplamFiyat && maliyetToplam) ? toplamFiyat - maliyetToplam : null;
   const karYuzde = karBoleni > 0 ? Math.round((1 - karBoleni) * 100) : 0;
 
   const ekle = () => {
+    if (isVana) {
+      if (toplamFiyat === null) return;
+      const satir = {
+        id: Date.now(),
+        mahal,
+        kod: modelKey,
+        ad: model.ad,
+        yukseklik: "-",
+        uzunluk: "-",
+        dilim: "-",
+        watt: "-",
+        tip: model.tip,
+        listeBirim: birimFiyat,
+        maliyetBirim: birimFiyat,
+        satışBirim: satışBirim,
+        birim: satışBirim,
+        renkKod: "-",
+        renkAd: "-",
+        renkFark: 0,
+        karYuzde: karYuzde,
+        adet,
+        toplam: toplamFiyat,
+        isVana: true,
+      };
+      setSatirlar(p => [...p, satir]);
+      setMahal(""); setAdet(1);
+      if (isMobile) setActiveTab("teklif");
+      return;
+    }
     if (!seciliVaryant || toplamFiyat === null) return;
     const satir = {
       id: Date.now(),
@@ -150,6 +371,7 @@ export default function RadyalTeklif() {
       uzunluk: isHavlupan ? "-" : `${gercekUzunluk} mm`,
       dilim: isHavlupan ? "-" : dilimSayisi,
       watt: seciliVaryant.w,
+      tip: isHavlupan ? (seciliVaryant.t || "-") : "-",
       listeBirim: birimFiyat,
       maliyetBirim: maliyetBirim,
       satışBirim: satışBirim,
@@ -160,6 +382,7 @@ export default function RadyalTeklif() {
       karYuzde: karYuzde,
       adet,
       toplam: toplamFiyat,
+      isVana: false,
     };
     setSatirlar(p => [...p, satir]);
     setMahal(""); setUzunluk(""); setAdet(1);
@@ -184,8 +407,9 @@ export default function RadyalTeklif() {
     w.document.close();
   };
 
-  const radyatorler = Object.entries(ALL_MODELS).filter(([,v]) => !v.byH);
+  const radyatorler = Object.entries(ALL_MODELS).filter(([,v]) => !v.byH && !v.netFiyat);
   const havlupanlar = Object.entries(ALL_MODELS).filter(([,v]) => v.byH);
+  const vanalar     = Object.entries(ALL_MODELS).filter(([,v]) => v.netFiyat);
 
   return (
     <div style={{
@@ -284,6 +508,11 @@ export default function RadyalTeklif() {
                     <option key={k} value={k}>{k} – {v.ad}</option>
                   ))}
                 </optgroup>
+                <optgroup label="── VANA & AKSESUAR (Net Fiyat) ──">
+                  {vanalar.map(([k,v])=>(
+                    <option key={k} value={k}>{k} – {v.ad}</option>
+                  ))}
+                </optgroup>
               </select>
             </div>
 
@@ -299,20 +528,37 @@ export default function RadyalTeklif() {
               </div>
             )}
 
-            {/* Yükseklik */}
+            {/* Yükseklik – vana için gösterme */}
+            {!isVana && (
             <div>
               <Label>Yükseklik (mm)</Label>
               <select value={height} onChange={e=>setHeight(e.target.value)}
                 style={{...inputSt, width:"100%", boxSizing:"border-box", cursor:"pointer"}}>
                 <option value="">-- Seçin --</option>
                 {model?.v.map(vr=>(
-                  <option key={vr.h} value={vr.h}>{vr.h} mm — {vr.w} W/dilim</option>
+                  <option key={vr.h} value={vr.h}>
+                    {isHavlupan
+                      ? `${vr.t ? `[${vr.t}] ` : ""}${vr.h} mm — ${vr.w} W`
+                      : `${vr.h} mm — ${vr.w} W/dilim`}
+                  </option>
                 ))}
               </select>
             </div>
+            )}
+
+            {/* Vana seçilince net fiyat bilgisi göster */}
+            {isVana && (
+              <div style={{
+                background:"#12141e", borderRadius:8, padding:"10px 14px",
+                border:"1px solid #2a2d3e", fontSize:13, color:"#e8640a",fontWeight:600
+              }}>
+                🏷 NET SATIŞ FİYATI: ₺{fmt(model.p)}
+                <div style={{fontSize:11,color:"#666",fontWeight:400,marginTop:3}}>İskonto uygulanmaz — üzerine kar böleni eklenir</div>
+              </div>
+            )}
 
             {/* Uzunluk (sadece radyatör) */}
-            {!isHavlupan && (
+            {!isHavlupan && !isVana && (
               <div>
                 <Label>Radyatör Uzunluğu (mm)</Label>
                 <div style={{position:"relative"}}>
@@ -342,7 +588,8 @@ export default function RadyalTeklif() {
             )}
 
 
-            {/* Renk Seçimi */}
+            {/* Renk Seçimi - vana için gösterme */}
+            {!isVana && (
             <div>
               <Label>Renk</Label>
               <select value={renk.kod} onChange={e=>setRenk(RENKLER.find(r=>r.kod===e.target.value))}
@@ -363,6 +610,7 @@ export default function RadyalTeklif() {
                 </div>
               )}
             </div>
+            )}
 
             {/* Adet */}
             <div>
@@ -406,26 +654,42 @@ export default function RadyalTeklif() {
             </div>
 
             {/* Özet */}
-            {seciliVaryant && toplamFiyat !== null && (
+            {(isVana || seciliVaryant) && toplamFiyat !== null && (
               <div style={{
                 background:"linear-gradient(135deg,#1e2a0f,#1a2710)",
                 borderRadius:10, padding:"14px 16px",
                 border:"1px solid #2d4020",
               }}>
-                <div style={{fontSize:12,color:"#5a7a3a",fontWeight:600,marginBottom:10,letterSpacing:1,textTransform:"uppercase"}}>Fiyat Özeti</div>
+                <div style={{fontSize:12,color:"#5a7a3a",fontWeight:600,marginBottom:10,letterSpacing:1,textTransform:"uppercase"}}>
+                  {isVana ? "💰 Net Fiyat Özeti" : "Fiyat Özeti"}
+                </div>
                 <div style={{display:"flex",flexDirection:"column",gap:6}}>
-                  {!isHavlupan && dilimSayisi && (
+                  {!isHavlupan && !isVana && dilimSayisi && (
                     <Row label="Dilim sayısı" val={`${dilimSayisi} adet`} />
                   )}
-                  <Row label="Liste birim" val={`₺${fmt(birimFiyat)}${!isHavlupan?" /dilim":" /adet"}`} accent="#555" />
-                  <Row label="-%44 sonrası birim" val={`₺${fmt(birimFiyat*(1-LISTE_ISKONTO))}${renkFark>0?` (+%${renkFark} renk)`:""}`} accent="#aaa" />
+                  <Row
+                    label={isVana ? "NET Satış Fiyatı (liste)" : "Liste birim"}
+                    val={`₺${fmt(birimFiyat)}${!isHavlupan && !isVana?" /dilim":" /adet"}`}
+                    accent={isVana ? "#e8640a" : "#555"}
+                  />
+                  {!isVana && (
+                    <Row
+                      label={`-${isHavlupan?"46":"44"}% iskonto sonrası birim`}
+                      val={`₺${fmt(maliyetBirim)}${renkFark>0?` (+%${renkFark} renk)`:""}`}
+                      accent="#aaa"
+                    />
+                  )}
                   <div style={{borderTop:"1px solid #2d4020",paddingTop:6,marginTop:2}}>
-                    <Row label={`Maliyet (${!isHavlupan?dilimSayisi+" dilim × ":""}${adet} adet)`}
-                      val={`₺${maliyetBirim && (isHavlupan||dilimSayisi) ? fmt(maliyetBirim*(!isHavlupan?dilimSayisi:1)*adet) : "-"}`}
-                      accent="#e8a87c" />
-                    <Row label={`Kar ÷${karBoleni} = %${karYuzde} marj`}
-                      val={satışBirim && (isHavlupan||dilimSayisi) ? `+₺${fmt((satışBirim - maliyetBirim)*(!isHavlupan?dilimSayisi:1)*adet)}` : "-"}
-                      accent="#8dd45c" />
+                    <Row
+                      label={`Maliyet (${!isHavlupan && !isVana ? dilimSayisi+" dilim × " : ""}${adet} adet)`}
+                      val={`₺${maliyetBirim && (isHavlupan || isVana || dilimSayisi) ? fmt(maliyetBirim*(!isHavlupan && !isVana?dilimSayisi:1)*adet) : "-"}`}
+                      accent="#e8a87c"
+                    />
+                    <Row
+                      label={`Kar ÷${karBoleni} = %${karYuzde} marj`}
+                      val={satışBirim && (isHavlupan || isVana || dilimSayisi) ? `+₺${fmt((satışBirim - maliyetBirim)*(!isHavlupan && !isVana?dilimSayisi:1)*adet)}` : "-"}
+                      accent="#8dd45c"
+                    />
                   </div>
                   <div style={{borderTop:"1px solid #2d4020",paddingTop:8,marginTop:4,
                     display:"flex",justifyContent:"space-between",
@@ -438,12 +702,12 @@ export default function RadyalTeklif() {
             )}
 
             <button onClick={ekle}
-              disabled={!seciliVaryant || (!isHavlupan && !dilimSayisi)}
+              disabled={isVana ? false : (!seciliVaryant || (!isHavlupan && !dilimSayisi))}
               style={{
-                background: seciliVaryant ? "linear-gradient(135deg,#e8640a,#f5a623)" : "#2a2d3e",
-                color: seciliVaryant ? "#fff" : "#555",
+                background: (isVana || seciliVaryant) ? "linear-gradient(135deg,#e8640a,#f5a623)" : "#2a2d3e",
+                color: (isVana || seciliVaryant) ? "#fff" : "#555",
                 border:"none", borderRadius:8, padding:"12px 0",
-                fontSize:14, fontWeight:700, cursor: seciliVaryant ? "pointer" : "not-allowed",
+                fontSize:14, fontWeight:700, cursor: (isVana || seciliVaryant) ? "pointer" : "not-allowed",
                 letterSpacing:0.5, transition:"all .2s"
               }}>
               + Teklife Ekle
@@ -518,6 +782,7 @@ export default function RadyalTeklif() {
                       <div>
                         <span style={{fontWeight:700,color:"#e8640a",fontSize:15}}>{s.kod}</span>
                         <span style={{color:"#888",fontSize:12,marginLeft:8}}>{s.ad}</span>
+                        {s.isVana && <span style={{marginLeft:8,fontSize:10,background:"#1e3a5f",color:"#5ba3e8",borderRadius:4,padding:"1px 6px",fontWeight:600}}>NET FİYAT</span>}
                       </div>
                       <button onClick={()=>sil(s.id)} style={{
                         background:"none",border:"none",color:"#e05a5a",
@@ -526,10 +791,11 @@ export default function RadyalTeklif() {
                     </div>
                     <div style={{marginTop:6,display:"grid",gridTemplateColumns:"1fr 1fr",gap:"4px 12px",fontSize:12,color:"#888"}}>
                       {s.mahal && s.mahal!=="-" && <span>📍 {s.mahal}</span>}
-                      <span>↕ {s.yukseklik} mm</span>
-                      <span>↔ {s.uzunluk} ({s.dilim} dilim)</span>
-                      <span>⚡ {s.watt} W</span>
-                      <span style={{color:s.renkFark>0?"#e8640a":"#888"}}>{s.renkAd}{s.renkFark>0?` (+%${s.renkFark})`:""}</span>
+                      {!s.isVana && <span>↕ {s.yukseklik} mm</span>}
+                      {!s.isVana && s.dilim !== "-" && <span>↔ {s.uzunluk} ({s.dilim} dilim)</span>}
+                      {s.tip && s.tip !== "-" && !s.isVana && <span>Tip: {s.tip}</span>}
+                      {!s.isVana && <span>⚡ {s.watt} W</span>}
+                      {!s.isVana && <span style={{color:s.renkFark>0?"#e8640a":"#888"}}>{s.renkAd}{s.renkFark>0?` (+%${s.renkFark})`:""}</span>}
                       <span>× {s.adet} adet</span>
                     </div>
                     <div style={{marginTop:8,display:"flex",justifyContent:"flex-end",alignItems:"baseline",gap:8}}>
@@ -550,10 +816,10 @@ export default function RadyalTeklif() {
                     <span style={{color:"#888",fontSize:12,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}
                       title={s.mahal}>{s.mahal||"-"}</span>
                     <span style={{fontWeight:600,color:"#e8640a"}}>{s.kod}</span>
-                    <span style={{color:s.renkFark>0?"#e8640a":"#888",fontSize:11,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}} title={s.renkAd}>{s.renkKod}{s.renkFark>0?` +%${s.renkFark}`:""}</span>
-                    <span style={{color:"#aaa"}}>{s.yukseklik} mm</span>
-                    <span style={{color:"#aaa"}}>{s.dilim}</span>
-                    <span style={{color:"#aaa"}}>{s.watt}W</span>
+                    <span style={{color:s.isVana?"#5ba3e8":s.renkFark>0?"#e8640a":"#888",fontSize:11,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}} title={s.isVana?"Net Fiyat":s.renkAd}>{s.isVana ? "NET FİYAT" : `${s.renkKod}${s.renkFark>0?` +%${s.renkFark}`:""}`}</span>
+                    <span style={{color:"#aaa"}}>{s.isVana ? "-" : `${s.yukseklik} mm`}</span>
+                    <span style={{color:"#aaa"}}>{s.isVana ? "-" : (s.tip && s.tip!=="-" ? s.tip : s.dilim)}</span>
+                    <span style={{color:"#aaa"}}>{s.isVana ? "-" : `${s.watt}W`}</span>
                     <span>₺{fmt(s.birim)}</span>
                     <span style={{color:"#aaa"}}>{s.adet}</span>
                     <span style={{textAlign:"right",fontWeight:600,color:"#8dd45c"}}>₺{fmt(s.toplam)}</span>
