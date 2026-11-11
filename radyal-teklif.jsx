@@ -56,6 +56,29 @@ const HAVLUPAN_DATA = {
   PLOA: { ad:"Lotus Ayna Polisaj", tip:"Havlupan", byH:true,  v:[{h:750,t:"PLO-500/750",w:237,p:30159},{h:1200,t:"PLO-500/1200",w:373,p:43736},{h:1500,t:"PLO-500/1500",w:464,p:50026}]},
 };
 
+// ─── ADET FİYATLI RADYATÖRLER (TL/ADET – liste iskontosu + renk farkı uygulanır) ───
+const ADET_RADYATOR_DATA = {
+  YLA:  { ad:"Aynalı Yalı", tip:"Radyatör", byH:true, adetRad:true, v:[{h:1500,t:"450 mm / 11 dilim (ayna 1500x280)",w:0,p:26066},{h:1500,t:"530 mm / 13 dilim (ayna 1500x280)",w:0,p:29548}]},
+  MSFY: { ad:"Mesken Flat Yatay", tip:"Radyatör", byH:true, adetRad:true, v:[{h:1250,t:"200 mm / 2 dilim",w:359,p:8233},{h:1500,t:"200 mm / 2 dilim",w:421,p:9459},{h:1750,t:"200 mm / 2 dilim",w:480,p:10722},{h:2000,t:"200 mm / 2 dilim",w:549,p:11948},{h:1250,t:"300 mm / 3 dilim",w:539,p:11299},{h:1500,t:"300 mm / 3 dilim",w:632,p:13051},{h:1750,t:"300 mm / 3 dilim",w:720,p:14891},{h:2000,t:"300 mm / 3 dilim",w:823,p:16572},{h:1250,t:"400 mm / 4 dilim",w:719,p:14296},{h:1500,t:"400 mm / 4 dilim",w:843,p:16631},{h:1750,t:"400 mm / 4 dilim",w:961,p:18892},{h:2000,t:"400 mm / 4 dilim",w:1098,p:21080}]},
+  LFTY: { ad:"Loft Yatay", tip:"Radyatör", byH:true, adetRad:true, v:[{h:1250,t:"265 mm / 3 dilim",w:464,p:13292},{h:1500,t:"265 mm / 3 dilim",w:545,p:15279},{h:1750,t:"265 mm / 3 dilim",w:639,p:17055},{h:2000,t:"265 mm / 3 dilim",w:658,p:19776},{h:1250,t:"355 mm / 4 dilim",w:619,p:17141},{h:1500,t:"355 mm / 4 dilim",w:726,p:19840},{h:1750,t:"355 mm / 4 dilim",w:852,p:22466},{h:2000,t:"355 mm / 4 dilim",w:944,p:25165},{h:1250,t:"445 mm / 5 dilim",w:774,p:21350},{h:1500,t:"445 mm / 5 dilim",w:908,p:24652},{h:1750,t:"445 mm / 5 dilim",w:1065,p:27991},{h:2000,t:"445 mm / 5 dilim",w:1180,p:31306}]},
+};
+
+// ─── ELEKTRİKLİ HAVLUPAN (TL/ADET – renk fiyata dahil, renk farkı yok; liste iskontosu uygulanır) ───
+const ELEKTRIKLI_DATA = {
+  E1075: { ad:"Ruby TW 1075 (800x110)", tip:"Elektrikli Havlupan", byH:true, elk:true, v:[{h:800,t:"Satine",w:14,p:12132.5},{h:800,t:"RAL 9005 Mat Siyah",w:14,p:13340},{h:800,t:"Krom",w:14,p:13949.5},{h:800,t:"Gold/Rose PVD",w:14,p:18727.75}]},
+  E1150: { ad:"Ruby TW 1150 (1500x110)", tip:"Elektrikli Havlupan", byH:true, elk:true, v:[{h:1500,t:"Satine",w:29,p:14524.5},{h:1500,t:"RAL 9005 Mat Siyah",w:29,p:16008},{h:1500,t:"Krom",w:29,p:16307},{h:1500,t:"Gold/Rose PVD",w:29,p:22804.5}]},
+  E2020: { ad:"Ruby TW 2020 (200x800)", tip:"Elektrikli Havlupan", byH:true, elk:true, v:[{h:200,t:"Satine",w:30,p:18791},{h:200,t:"RAL 9005 Mat Siyah",w:30,p:20672.4},{h:200,t:"Krom",w:30,p:21614.25},{h:200,t:"Gold/Rose PVD",w:30,p:28096.8}]},
+  E2080: { ad:"Ruby TW 2080 (800x200)", tip:"Elektrikli Havlupan", byH:true, elk:true, v:[{h:800,t:"Satine",w:30,p:22425},{h:800,t:"RAL 9005 Mat Siyah",w:30,p:24667.5},{h:800,t:"Krom",w:30,p:25794.5},{h:800,t:"Gold/Rose PVD",w:30,p:33534}]},
+  E2150: { ad:"Ruby TW 2150 (1500x200)", tip:"Elektrikli Havlupan", byH:true, elk:true, v:[{h:1500,t:"Satine",w:52,p:26898.5},{h:1500,t:"RAL 9005 Mat Siyah",w:52,p:29601},{h:1500,t:"Krom",w:52,p:30935},{h:1500,t:"Gold/Rose PVD",w:52,p:40227}]},
+  E3150: { ad:"Ruby TW 3150 (1500x200)", tip:"Elektrikli Havlupan", byH:true, elk:true, v:[{h:1500,t:"Satine",w:52,p:26898.5},{h:1500,t:"RAL 9005 Mat Siyah",w:52,p:29601},{h:1500,t:"Krom",w:52,p:30935},{h:1500,t:"Gold/Rose PVD",w:52,p:40227}]},
+  E4040: { ad:"Ruby TW 4040 (400x800)", tip:"Elektrikli Havlupan", byH:true, elk:true, v:[{h:400,t:"Satine",w:78,p:27473.5},{h:400,t:"RAL 9005 Mat Siyah",w:78,p:29003},{h:400,t:"Krom",w:78,p:30526.75},{h:400,t:"Gold/Rose PVD",w:78,p:39686.5}]},
+  E4080: { ad:"Ruby TW 4080 (800x400)", tip:"Elektrikli Havlupan", byH:true, elk:true, v:[{h:800,t:"Satine",w:68,p:27473.5},{h:800,t:"RAL 9005 Mat Siyah",w:68,p:29003},{h:800,t:"Krom",w:68,p:30526.75},{h:800,t:"Gold/Rose PVD",w:68,p:39686.5}]},
+  ELILY:  { ad:"Lily (EH-LILY-500)", tip:"Elektrikli Havlupan", byH:true, elk:true, v:[{h:600,t:"EH-LILY-500-600-100",w:100,p:13593},{h:800,t:"EH-LILY-500-800-125",w:125,p:14230.10},{h:1000,t:"EH-LILY-500-1000-175",w:175,p:17221.25},{h:1200,t:"EH-LILY-500-1200-200",w:200,p:19003.75},{h:1400,t:"EH-LILY-500-1400-250",w:250,p:20930}]},
+  ELILYD: { ad:"Lily D (EH-LILY D-500)", tip:"Elektrikli Havlupan", byH:true, elk:true, v:[{h:600,t:"EH-LILY D-500-600-100",w:100,p:11557.50},{h:800,t:"EH-LILY D-500-800-125",w:125,p:12098},{h:1000,t:"EH-LILY D-500-1000-175",w:175,p:14639.50},{h:1200,t:"EH-LILY D-500-1200-200",w:200,p:16151.75},{h:1400,t:"EH-LILY D-500-1400-250",w:250,p:17792.80}]},
+  ELILYS: { ad:"Lily S (EH-LILY-S)", tip:"Elektrikli Havlupan", byH:true, elk:true, v:[{h:600,t:"EH-LILY-S-500",w:100,p:9044.75},{h:800,t:"EH-LILY-S-750",w:125,p:9499},{h:1000,t:"EH-LILY-S-1500",w:175,p:11365.45}]},
+  EFLV:   { ad:"Lavanta Elektrikli (Flower)", tip:"Elektrikli Havlupan", byH:true, elk:true, v:[{h:1000,t:"HE-FLV-04-10-05",w:400,p:48201.10},{h:1200,t:"HE-FLV-06-12-06",w:600,p:53860.25}]},
+};
+
 // ─── VANA & MONTAJ ELEMANLARI (NET SATIŞ FİYATI – iskonto uygulanmaz) ────────
 // netFiyat: true → sisteme direkt alış fiyatı girilir, kar böleni üstünden satış yapılır
 const VANA_DATA = {
@@ -234,7 +257,7 @@ const VANA_DATA = {
   V80003: { ad:"R-24 İnhibütör 250 gr Plastik Şişe",          tip:"Vana", netFiyat:true, p:174   },
 };
 
-const ALL_MODELS = { ...RADYATOR_DATA, ...HAVLUPAN_DATA, ...VANA_DATA };
+const ALL_MODELS = { ...RADYATOR_DATA, ...ADET_RADYATOR_DATA, ...HAVLUPAN_DATA, ...ELEKTRIKLI_DATA, ...VANA_DATA };
 
 const RENKLER = [
   { kod:"RAL 9010", ad:"Kırık Beyaz",         fark:0,  grup:"Standart" },
@@ -296,7 +319,7 @@ export default function RadyalTeklif() {
   const model = ALL_MODELS[modelKey];
   const isHavlupan = !!model?.byH;
   const isVana = !!model?.netFiyat;
-  const seciliVaryant = isVana ? { h:0, w:0, p: model.p } : model?.v.find(v => v.h === parseInt(height));
+  const seciliVaryant = isVana ? { h:0, w:0, p: model.p } : (height !== "" ? model?.v[parseInt(height)] : undefined);
 
   // Radyatör: dilim hesabı
   const dilimSayisi = !isHavlupan && !isVana && seciliVaryant && uzunluk
@@ -310,7 +333,8 @@ export default function RadyalTeklif() {
   const hamFiyat = !isHavlupan && !isVana
     ? (birimFiyat && dilimSayisi ? birimFiyat * dilimSayisi : null)
     : birimFiyat;
-  const renkFark = renk ? renk.fark : 0;
+  const isElk = !!model?.elk;
+  const renkFark = (renk && !isElk) ? renk.fark : 0;
   // Maliyet:
   //   radyatör  → liste * (1-50%) * (1+renk%)
   //   havlupan  → liste * (1-50%) * (1+renk%)
@@ -376,9 +400,9 @@ export default function RadyalTeklif() {
       maliyetBirim: maliyetBirim,
       satışBirim: satışBirim,
       birim: satışBirim,
-      renkKod: renk.kod,
-      renkAd: renk.ad,
-      renkFark: renk.fark,
+      renkKod: isElk ? "-" : renk.kod,
+      renkAd: isElk ? (seciliVaryant.t || "Fiyata dahil") : renk.ad,
+      renkFark: isElk ? 0 : renk.fark,
       karYuzde: karYuzde,
       adet,
       toplam: toplamFiyat,
@@ -408,7 +432,9 @@ export default function RadyalTeklif() {
   };
 
   const radyatorler = Object.entries(ALL_MODELS).filter(([,v]) => !v.byH && !v.netFiyat);
-  const havlupanlar = Object.entries(ALL_MODELS).filter(([,v]) => v.byH);
+  const adetRadlar  = Object.entries(ALL_MODELS).filter(([,v]) => v.adetRad);
+  const havlupanlar = Object.entries(ALL_MODELS).filter(([,v]) => v.byH && !v.adetRad && !v.elk);
+  const elektrikli  = Object.entries(ALL_MODELS).filter(([,v]) => v.elk);
   const vanalar     = Object.entries(ALL_MODELS).filter(([,v]) => v.netFiyat);
 
   return (
@@ -503,8 +529,18 @@ export default function RadyalTeklif() {
                     <option key={k} value={k}>{k} – {v.ad} ({v.dw}mm dilim)</option>
                   ))}
                 </optgroup>
+                <optgroup label="── RADYATÖR (ADET FİYATLI) ──">
+                  {adetRadlar.map(([k,v])=>(
+                    <option key={k} value={k}>{k} – {v.ad}</option>
+                  ))}
+                </optgroup>
                 <optgroup label="── HAVLUPAN ──">
                   {havlupanlar.map(([k,v])=>(
+                    <option key={k} value={k}>{k} – {v.ad}</option>
+                  ))}
+                </optgroup>
+                <optgroup label="── ELEKTRİKLİ HAVLUPAN ──">
+                  {elektrikli.map(([k,v])=>(
                     <option key={k} value={k}>{k} – {v.ad}</option>
                   ))}
                 </optgroup>
@@ -535,10 +571,10 @@ export default function RadyalTeklif() {
               <select value={height} onChange={e=>setHeight(e.target.value)}
                 style={{...inputSt, width:"100%", boxSizing:"border-box", cursor:"pointer"}}>
                 <option value="">-- Seçin --</option>
-                {model?.v.map(vr=>(
-                  <option key={vr.h} value={vr.h}>
+                {model?.v.map((vr,i)=>(
+                  <option key={i} value={i}>
                     {isHavlupan
-                      ? `${vr.t ? `[${vr.t}] ` : ""}${vr.h} mm — ${vr.w} W`
+                      ? `${vr.t ? `[${vr.t}] ` : ""}${vr.h} mm${vr.w ? ` — ${vr.w} W` : ""}`
                       : `${vr.h} mm — ${vr.w} W/dilim`}
                   </option>
                 ))}
@@ -588,8 +624,8 @@ export default function RadyalTeklif() {
             )}
 
 
-            {/* Renk Seçimi - vana için gösterme */}
-            {!isVana && (
+            {/* Renk Seçimi - vana ve elektrikli için gösterme */}
+            {!isVana && !isElk && (
             <div>
               <Label>Renk</Label>
               <select value={renk.kod} onChange={e=>setRenk(RENKLER.find(r=>r.kod===e.target.value))}
